@@ -181,6 +181,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="View\Ator.aspx" />
+    <Content Include="View\Filme.aspx" />
+    <Content Include="View\Idioma.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -233,6 +236,27 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ator.aspx.cs">
+      <DependentUpon>Ator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Ator.aspx.designer.cs">
+      <DependentUpon>Ator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Filme.aspx.cs">
+      <DependentUpon>Filme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Filme.aspx.designer.cs">
+      <DependentUpon>Filme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Idioma.aspx.cs">
+      <DependentUpon>Idioma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Idioma.aspx.designer.cs">
+      <DependentUpon>Idioma.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
