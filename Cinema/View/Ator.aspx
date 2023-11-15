@@ -10,7 +10,7 @@
 
         <div>
             <asp:Label ID="Label1" runat="server" Text="Label">Tabela: Atores</asp:Label>
-            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            <asp:GridView ID="gvAtor" runat="server"></asp:GridView>
         </div>
         <a href="../InserirAtor.aspx">Inserir novo ator</a>
     </main>

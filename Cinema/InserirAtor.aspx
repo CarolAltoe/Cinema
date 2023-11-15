@@ -11,8 +11,8 @@
         <asp:Label ID="lblSobrenome" runat="server" Text="Sobrenome"></asp:Label>
         <br />
         <asp:TextBox ID="txtSobrenome" runat="server"></asp:TextBox>
-
-        <asp:Button ID="btnCadastrarAtor" runat="server" Text="Cadastrar Ator" />
+        <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O ator inserido já existe." Visible="False"></asp:Label>
+        <asp:Button ID="btnCadastrarAtor" runat="server" Text="Cadastrar Ator" OnClick="btnCadastrarAtor_Click"/>
     </div>
     </main>
 </asp:Content>

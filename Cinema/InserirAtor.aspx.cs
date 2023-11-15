@@ -13,5 +13,23 @@ namespace Cinema
         {
 
         }
+
+        protected void btnCadastrarAtor_Click(object sender, EventArgs e)
+        {
+            string nome = txtNome.Text;
+            string sobrenome = txtSobrenome.Text;
+            int? retorno = null;
+            DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
+            ta.InsertAtor(nome, sobrenome, ref retorno);
+            if (retorno == -1)
+            {
+                lblMsgErro.Visible = true;
+            }
+            else
+            {
+                Response.Redirect("View/Ator.aspx");
+            }
+
+        }
     }
 }
