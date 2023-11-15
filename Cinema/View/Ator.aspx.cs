@@ -21,5 +21,18 @@ namespace Cinema.View
         {
             CarregaAtor("", "");
         }
+
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = txtNomeAtor.Text;
+            string sobrenome = txtSobreNomeAtor.Text;
+            CarregaAtor(nome, sobrenome);
+        }
+
+        protected void btnCriarAtor_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("../InserirAtor.aspx");
+        }
     }
 }
