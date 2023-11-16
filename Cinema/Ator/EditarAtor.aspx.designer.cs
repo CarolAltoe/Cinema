@@ -11,16 +11,16 @@ namespace Cinema
 {
 
 
-    public partial class SiteMaster
+    public partial class EditarAtor
     {
 
         /// <summary>
-        /// Controle MainContent.
+        /// Controle form1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }

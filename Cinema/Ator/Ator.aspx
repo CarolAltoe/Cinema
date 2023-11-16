@@ -36,6 +36,7 @@
                 <Columns>
                     <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
                     <asp:BoundField DataField="Sobrenome" HeaderText="Sobrenome" SortExpression="Sobrenome" />
+                    <asp:BoundField DataField="link" HtmlEncode="False" />
                 </Columns>
             </asp:GridView>
 

@@ -13,6 +13,14 @@ namespace Cinema.View
         {
             DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
             DSCinema.AtorDataTable dt = ta.GetAtor(nome, sobrenome);
+
+            for (int i = 0; i <dt.Count; i++)
+            {
+                string link = "<a href = 'editar?id=" + dt[i].id + "'>Editar</a>";
+                string deletar = "<a href = 'deletar?id=" + dt[i].id + "'>Deletar</a>";
+                dt[i].link = link;
+            }
+
             gvAtor.DataSource = dt;
             gvAtor.DataBind();
         }
@@ -32,7 +40,7 @@ namespace Cinema.View
         protected void btnCriarAtor_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("../InserirAtor.aspx");
+            Response.Redirect("/Ator/InserirAtor.aspx");
         }
     }
 }

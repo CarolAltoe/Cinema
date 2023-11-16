@@ -11,7 +11,7 @@
               <asp:Label ID="Label1" runat="server" Text="Label">Tabela: Filmes</asp:Label>
               <asp:GridView ID="GridView1" runat="server"></asp:GridView>
           </div>
-         <a href="../InserirFilme.aspx">Inserir novo filme</a>
+         <a href="/Filme/InserirFilme.aspx">Inserir novo filme</a>
      </main>
 
 
