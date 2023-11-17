@@ -16,9 +16,11 @@ namespace Cinema.View
 
             for (int i = 0; i <dt.Count; i++)
             {
-                string link = "<a href = 'editar?id=" + dt[i].id + "'>Editar</a>";
-                string deletar = "<a href = 'deletar?id=" + dt[i].id + "'>Deletar</a>";
+                string editar = "<a href = 'EditarAtor?id=" + dt[i].id + "'>Editar</a>";
+                string deletar = "<a href = 'DeletarAtor?id=" + dt[i].id + "'>Deletar</a>";
+                string link = editar + " | " + deletar;
                 dt[i].link = link;
+
             }
 
             gvAtor.DataSource = dt;
@@ -42,5 +44,7 @@ namespace Cinema.View
 
             Response.Redirect("/Ator/InserirAtor.aspx");
         }
+
+        
     }
 }

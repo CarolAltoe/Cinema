@@ -1,17 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarAtor.aspx.cs" Inherits="Cinema.EditarAtor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarAtor.aspx.cs" Inherits="Cinema.Ator.EditarAtor" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
+ <main>
+     <h1>Alterar Ator:</h1>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+     <hr />
+     <div>
+         <asp:Label ID="lblNome" class="label" runat="server" Text="Nome">Digite o novo nome:</asp:Label>
+         <br />
+         <asp:TextBox ID="txtNome" runat="server" class="form-control"></asp:TextBox>
+         <br />
 
-        </div>
-    </form>
-</body>
-</html>
+         <asp:Label ID="lblSobrenome" class="label" runat="server" Text="Sobrenome">Digite o novo sobrenome:</asp:Label>
+         <br />
+         <asp:TextBox ID="txtSobrenome" runat="server" class="form-control"></asp:TextBox>
+         <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O ator inserido já existe." Visible="False"></asp:Label>
+         <br />
+         <asp:Button ID="btnAlterarAtor" class="btn btn-primary" runat="server" Text="Alterar" OnClick="btnAlterarAtor_Click" />
+     </div>
+ </main>
+</asp:Content>

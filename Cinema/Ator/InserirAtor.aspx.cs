@@ -27,7 +27,7 @@ namespace Cinema
             }
             else
             {
-                Response.Redirect("View/Ator.aspx");
+                Response.Redirect("Ator.aspx");
             }
 
         }

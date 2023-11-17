@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Cinema.Ator
 {
-    public partial class EditarAtor : System.Web.UI.Page
+    public partial class DeletarAtor : System.Web.UI.Page
     {
         int id;
         protected void Page_Load(object sender, EventArgs e)
@@ -17,24 +17,29 @@ namespace Cinema.Ator
             {
                 DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
                 DSCinema.AtorDataTable dt = ta.GetAtorById(id);
-                txtNome.Text = dt[0].nome;
-                txtSobrenome.Text = dt[0].sobrenome;
+                lblNomeAtor.Text = dt[0].nome + " " + dt[0].sobrenome;
             }
         }
 
-        protected void btnAlterarAtor_Click(object sender, EventArgs e)
+        protected void btnSim_Click(object sender, EventArgs e)
         {
             int? resposta = null;
             DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
-            ta.EditarAtor(id, txtNome.Text, txtSobrenome.Text, ref resposta);
-            if (resposta == 0) // permite edição
+            ta.DeleteAtor(id, ref resposta);
+            if (resposta == 0) //ator com assocociação (não deixa excluir)
             {
-                Response.Redirect("Ator.aspx"); 
+                Response.Write("Volta que vai dar ruim!");
             }
-            else //não permite edição
+            else //ator sem associação (deixa excluir)
             {
                 Response.Redirect("Ator.aspx");
             }
+            
+        }
+
+        protected void btnNão_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ator.aspx");
         }
     }
 }
