@@ -30,9 +30,9 @@ CREATE TABLE Filmes (
 
 -- Criar a tabela de relacionamento entre Ator e Filmes (muitos para muitos)
 CREATE TABLE AtorFilme (
+	id INT PRIMARY KEY IDENTITY,
     ator_id INT,
     filme_id INT NOT NULL,
-    PRIMARY KEY (ator_id, filme_id),
     FOREIGN KEY (ator_id) REFERENCES Ator(id),
     FOREIGN KEY (filme_id) REFERENCES Filmes(id)
 );
