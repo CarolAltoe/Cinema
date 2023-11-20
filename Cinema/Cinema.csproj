@@ -123,6 +123,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Filme\DeletarFilme.aspx" />
+    <Content Include="Filme\EditarFilme.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Ator\InserirAtor.aspx" />
     <Content Include="Filme\InserirFilme.aspx" />
@@ -232,6 +234,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSCinema.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Filme\DeletarFilme.aspx.cs">
+      <DependentUpon>DeletarFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Filme\DeletarFilme.aspx.designer.cs">
+      <DependentUpon>DeletarFilme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Filme\EditarFilme.aspx.cs">
+      <DependentUpon>EditarFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Filme\EditarFilme.aspx.designer.cs">
+      <DependentUpon>EditarFilme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

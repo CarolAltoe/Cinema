@@ -32,5 +32,3 @@
     </div>
     </main>
 </asp:Content>
-
-<%--Descrição, Ano de lançamento, Categoria, Idioma e Classificação indicativa--%>
