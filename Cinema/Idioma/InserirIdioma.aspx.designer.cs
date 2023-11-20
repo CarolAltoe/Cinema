@@ -24,21 +24,30 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.Label lblDescricao;
 
         /// <summary>
-        /// Controle txtNome.
+        /// Controle txtDescricao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
 
         /// <summary>
-        /// Controle btnCadastrarAtor.
+        /// Controle lblMsgErro.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrarAtor;
+        protected global::System.Web.UI.WebControls.Label lblMsgErro;
+
+        /// <summary>
+        /// Controle btnCadastrarIdioma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrarIdioma;
     }
 }
