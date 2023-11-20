@@ -7,56 +7,38 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Cinema.View
+namespace Cinema.Idioma
 {
 
 
-    public partial class Idioma
+    public partial class DeletarIdioma
     {
 
         /// <summary>
-        /// Controle btnCriarIdioma.
+        /// Controle lblDescricao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCriarIdioma;
+        protected global::System.Web.UI.WebControls.Label lblDescricao;
 
         /// <summary>
-        /// Controle lblNome.
+        /// Controle btnSim.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNome;
+        protected global::System.Web.UI.WebControls.Button btnSim;
 
         /// <summary>
-        /// Controle txtDescricaoIdioma.
+        /// Controle btnNão.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricaoIdioma;
-
-        /// <summary>
-        /// Controle btnPesquisar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisar;
-
-        /// <summary>
-        /// Controle gvIdioma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvIdioma;
+        protected global::System.Web.UI.WebControls.Button btnNão;
     }
 }

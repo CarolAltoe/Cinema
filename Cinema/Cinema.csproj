@@ -126,6 +126,8 @@
     <Content Include="Global.asax" />
     <Content Include="Ator\InserirAtor.aspx" />
     <Content Include="Filme\InserirFilme.aspx" />
+    <Content Include="Idioma\DeletarIdioma.aspx" />
+    <Content Include="Idioma\EditarIdioma.aspx" />
     <Content Include="Idioma\InserirIdioma.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -247,6 +249,20 @@
     </Compile>
     <Compile Include="Filme\InserirFilme.aspx.designer.cs">
       <DependentUpon>InserirFilme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Idioma\DeletarIdioma.aspx.cs">
+      <DependentUpon>DeletarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Idioma\DeletarIdioma.aspx.designer.cs">
+      <DependentUpon>DeletarIdioma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Idioma\EditarIdioma.aspx.cs">
+      <DependentUpon>EditarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Idioma\EditarIdioma.aspx.designer.cs">
+      <DependentUpon>EditarIdioma.aspx</DependentUpon>
     </Compile>
     <Compile Include="Idioma\InserirIdioma.aspx.cs">
       <DependentUpon>InserirIdioma.aspx</DependentUpon>

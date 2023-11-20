@@ -13,5 +13,22 @@ namespace Cinema
         {
 
         }
+
+        protected void btnCadastrarIdioma_Click(object sender, EventArgs e)
+        {
+            string descricao = txtDescricao.Text;
+            int? retorno = null;
+            DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
+            ta.InsertIdioma(descricao, ref retorno);
+            if (retorno == -1)
+            {
+                lblMsgErro.Visible = true;
+            }
+            else
+            {
+                Response.Redirect("Idioma.aspx");
+            }
+
+        }
     }
 }
