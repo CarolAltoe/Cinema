@@ -130,3 +130,134 @@ BEGIN
 		set @ret =  1 -- deixa excluir pq não há atuação
 	end	
 END
+
+
+-- PROCEDURES IDIOMA
+
+--SELECT IDIOMA
+USE [Cinema]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[selectIdioma] 
+	@descricao varchar(255) = ''
+AS
+BEGIN
+	select * 
+	from Idiomas
+	where descricao like '%' + @descricao + '%' 
+END
+
+-- SELECT BY ID
+USE [Cinema]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE selectIdiomaById
+	@id int
+AS
+BEGIN
+	select * from Idiomas where id = @id
+END
+
+
+--INSERT IDIOMA
+USE [Cinema]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[inserIdioma]
+(
+	@descricao varchar(255) = '',
+	@ret int output
+)
+AS
+begin
+	IF exists(select * from Idiomas where descricao = @descricao)
+	begin
+		set @ret = -1
+	end
+	ELSE
+	begin
+		INSERT into Idiomas (descricao) values (@descricao)
+	end
+END
+
+--UPDATE IDIOMA
+USE [Cinema]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[updateIdioma]
+	@id int, 
+	@descricao varchar(255) = '',
+	@ret int output
+AS
+BEGIN 
+	-- Verificar se a consulta NÃO retorna resultados
+    IF NOT EXISTS (SELECT 1 FROM Idiomas WHERE id = @id )
+    BEGIN
+        -- se a consulta NÃO trouxer resultados, não cotinua a alteração
+        set @ret = -1 
+	END
+	ELSE IF exists(select * from Idiomas where descricao = @descricao)
+	BEGIN
+		-- se existe ator com mesmo nome e sobrenome, não deixo alterar
+		set @ret = -1 
+	END
+	ELSE
+	BEGIN
+		UPDATE Idiomas SET descricao = @descricao where id = @id
+	END
+END
+
+--DELETE IDIOMA
+USE [Cinema]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/*
+CREATE PROCEDURE [dbo].[deleteAtor] 
+	@id int,
+	@nome varchar(255) = '',
+	@sobrenome varchar(255) = '',
+	@ret int output
+AS
+BEGIN
+	if exists(select * from ator where nome = @nome and sobrenome=@sobrenome)
+		set @ret = -1
+	else
+		DELETE FROM ator where id = @id
+END*/
+CREATE PROCEDURE deleteIdioma
+	@id int, @ret int output
+AS
+BEGIN
+	-- Verificar se a consulta NÃO retorna resultados
+    IF NOT EXISTS (SELECT 1 FROM Idiomas WHERE id = @id )
+    BEGIN
+        -- se a consulta NÃO trouxer resultados, não continua a exclusão 
+        set @ret = -1 
+	END
+	-- se existe atuação, faço tal coisa 
+/*	IF exists (select * from AtorFilme where ator_id = @id)
+	begin
+		set @ret = 0 -- não deixa excluir pq há atuações
+	end*/
+	ELSE
+	begin
+		delete from Idiomas where id = @id
+		set @ret =  1 -- deixa excluir pq não há atuação
+	end	
+END
