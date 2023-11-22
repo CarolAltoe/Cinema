@@ -34,7 +34,7 @@ namespace Cinema.View
             for (int i = 0; i < dt.Count; i++)
             {
                 int idIdioma = dt[i].id;
-                dt[i].ddlIdioma = idIdioma;
+               // dt[i].ddlIdioma = idIdioma;
             }
             ddlIdioma.DataSource = dt;
             ddlIdioma.DataBind();
