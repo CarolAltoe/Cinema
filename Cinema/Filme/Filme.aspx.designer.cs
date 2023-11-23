@@ -96,6 +96,15 @@ namespace Cinema.View
         protected global::System.Web.UI.WebControls.TextBox txtCategoriaFilme;
 
         /// <summary>
+        /// Controle lblIdioma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdioma;
+
+        /// <summary>
         /// Controle ddlIdioma.
         /// </summary>
         /// <remarks>
@@ -121,24 +130,6 @@ namespace Cinema.View
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtClassificacaoIndicativa;
-
-        /// <summary>
-        /// Controle lblIdioma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdioma;
-
-        /// <summary>
-        /// Controle txtIdiomaFilme.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdiomaFilme;
 
         /// <summary>
         /// Controle btnPesquisar.

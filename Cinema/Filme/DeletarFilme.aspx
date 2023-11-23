@@ -1,16 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeletarFilme.aspx.cs" Inherits="Cinema.Filme.DeletarFilme" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DeletarFilme.aspx.cs" Inherits="Cinema.Filme.DeletarFilme" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
+    <main>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+         <h2>Tem certeza que deseja excluir o filme abaixo?</h2>
+         <asp:Label ID="lblNomeFilme" runat="server" Text=""></asp:Label>
+         <br>
+         <asp:Button ID="btnSim" runat="server" Text="Sim" OnClick="btnSim_Click" />
+         <asp:Button ID="btnNão" runat="server" Text="Não" OnClick="btnNão_Click" />
+    </main>
+</asp:Content>

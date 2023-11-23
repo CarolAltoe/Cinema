@@ -11,7 +11,44 @@ namespace Cinema
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CarregaIdioma();
+            }
+        }
+
+        void CarregaIdioma()
+        {
+            DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
+            var result = ta.GetIdioma("");
+            ddlIdioma.DataSource = result;
+            ddlIdioma.DataTextField = "descricao";
+            ddlIdioma.DataValueField = "id";
+            ddlIdioma.DataBind();
+        }
+
+        protected void btnCadastrarFilme_Click(object sender, EventArgs e)
+        {
+            string titulo = txtTitulo.Text;
+            int ano_lancamento = Convert.ToInt32(txtAnoLancamento.Text);
+            string descricao = txtDescricao.Text;
+            string categoria = txtCategoria.Text;
+            string classificacao_indicativa = txtClassificacaoIndicativa.Text;
+            int idioma = Convert.ToInt32(ddlIdioma.SelectedValue);
+            int? retorno = null;
+            DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
+            ta.InsertFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma,  ref retorno);
+            if (retorno == -1)
+            {
+                lblMsgErro.Visible = true;
+            }
+            else
+            {
+                Response.Redirect("Filme.aspx");
+            }
 
         }
+
     }
+ 
 }

@@ -30,15 +30,12 @@
                     <asp:TextBox class="form-control" ID="txtCategoriaFilme" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-3">
-                <asp:DropDownList ID="ddlIdioma" runat="server"></asp:DropDownList>
+                    <asp:Label class="label" ID="lblIdioma" runat="server" Text="Digite o idioma:"></asp:Label>
+                    <asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" class="form-select"></asp:DropDownList>
                 </div>
                 <div class="col-md-3">
                     <asp:Label class="label" ID="lblClassificacaoIndicativa" runat="server" Text="Digite a classificação indicativa:"></asp:Label>
                     <asp:TextBox class="form-control" ID="txtClassificacaoIndicativa" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:Label class="label" ID="lblIdioma" runat="server" Text="Digite o idioma:"></asp:Label>
-                    <asp:TextBox class="form-control" ID="txtIdiomaFilme" runat="server"></asp:TextBox>
                 </div>
             </div>
             <br />

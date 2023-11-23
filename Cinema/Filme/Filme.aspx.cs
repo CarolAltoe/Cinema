@@ -9,6 +9,7 @@ namespace Cinema.View
 {
     public partial class Filme : System.Web.UI.Page
     {
+
         void CarregaFilme(string titulo, string descricao, string ano_lancamento, string categoria, string classificacao_indicativa, int idioma_id )
         {
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
@@ -27,24 +28,24 @@ namespace Cinema.View
             gvFilme.DataBind();
         }
 
-        void CarregaIdioma(string descricao)
+        void CarregaIdioma()
         {
             DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
-            DSCinema.IdiomaDataTable dt = ta.GetIdioma(descricao);
-            for (int i = 0; i < dt.Count; i++)
-            {
-                int idIdioma = dt[i].id;
-               // dt[i].ddlIdioma = idIdioma;
-            }
-            ddlIdioma.DataSource = dt;
+            var result = ta.GetIdioma("");
+            ddlIdioma.DataSource = result;
+            ddlIdioma.DataTextField = "descricao";
+            ddlIdioma.DataValueField = "id";
             ddlIdioma.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregaFilme("", "", "", "", "", 1);
-            CarregaIdioma("");
-        }
+            if (!IsPostBack)
+            {
+                CarregaIdioma();
+            }
+           }
+
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -53,8 +54,8 @@ namespace Cinema.View
             string ano_lancamento = txtAnoLancamento.Text;
             string categoria = txtCategoriaFilme.Text;
             string classificacao_indicativa = txtClassificacaoIndicativa.Text;
-            int idioma_id = Convert.ToInt32(txtIdiomaFilme.Text);
-            CarregaFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma_id);
+            int idioma = Convert.ToInt32(ddlIdioma.SelectedValue);
+            CarregaFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma);
         }
 
         protected void btnCriarFilme_Click(object sender, EventArgs e)

@@ -42,6 +42,15 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.Label lblDescricao;
 
         /// <summary>
+        /// Controle txtDescricao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
+
+        /// <summary>
         /// Controle lblAnoLancamento.
         /// </summary>
         /// <remarks>
@@ -69,39 +78,66 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.Label lblIdioma;
 
         /// <summary>
-        /// Controle txtIdioma.
+        /// Controle ddlIdioma.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdioma;
+        protected global::System.Web.UI.WebControls.DropDownList ddlIdioma;
 
         /// <summary>
-        /// Controle lblClassificacao.
+        /// Controle lblClassificacaoIndicativa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClassificacao;
+        protected global::System.Web.UI.WebControls.Label lblClassificacaoIndicativa;
 
         /// <summary>
-        /// Controle txtClassificacao.
+        /// Controle txtClassificacaoIndicativa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClassificacao;
+        protected global::System.Web.UI.WebControls.TextBox txtClassificacaoIndicativa;
 
         /// <summary>
-        /// Controle btnCadastrarAtor.
+        /// Controle lblCategoria.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrarAtor;
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
+
+        /// <summary>
+        /// Controle txtCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCategoria;
+
+        /// <summary>
+        /// Controle lblMsgErro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsgErro;
+
+        /// <summary>
+        /// Controle btnCadastrarFilme.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrarFilme;
     }
 }

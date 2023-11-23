@@ -281,6 +281,7 @@ BEGIN
 	where titulo like '%' + @titulo + '%' 
 	AND  categoria like '%' + @categoria + '%'
 	AND  classificacao_indicativa like '%' + @classificacao_indicativa + '%'
+	AND  idioma_id = @idioma_id
 END
 
 

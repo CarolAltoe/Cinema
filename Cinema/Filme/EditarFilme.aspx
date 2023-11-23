@@ -1,16 +1,46 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarFilme.aspx.cs" Inherits="Cinema.Filme.EditarFilme" %>
+﻿<%@ Page Title="Editar Filme" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarFilme.aspx.cs" Inherits="Cinema.Filme.EditarFilme" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <main>
+        <h1>Edição de Filme</h1>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+        <hr />
+        <div class="row">
+
+            <div class="col-md-3">
+                <asp:Label ID="lblTitulo" class="label" runat="server" Text="Digite o título:"></asp:Label>
+                <asp:TextBox ID="txtTitulo" class="form-control" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="col-md-3">
+                <asp:Label ID="lblDescricao" class="label" runat="server" Text="Digite a descrição:"></asp:Label>
+                <asp:TextBox ID="txtDescricao" class="form-control" type="textarea" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="col-md-3">
+                <asp:Label ID="lblAnoLancamento" class="label" runat="server" Text="Digite o ano de lançamento:"></asp:Label>
+                <asp:TextBox ID="txtAnoLancamento" class="form-control" type="number" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="col-md-3">
+                <asp:Label ID="lblIdioma" class="label" runat="server" Text="Digite o idioma:"></asp:Label>
+                <asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" class="form-select"></asp:DropDownList>
+            </div>
+
+            <div class="col-md-3">
+                <asp:Label ID="lblClassificacaoIndicativa" class="label" runat="server" Text="Digite a classificação indicativa:"></asp:Label>
+                <asp:TextBox ID="txtClassificacaoIndicativa" class="form-control" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="col-md-3">
+                <asp:Label ID="lblCategoria" class="label" runat="server" Text="Digite a categoria:"></asp:Label>
+                <asp:TextBox ID="txtCategoria" class="form-control" runat="server"></asp:TextBox>
+            </div>
+            <br />
+            <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O filme inserido já existe." Visible="False"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btnEditarFilme" class="btn btn-primary" runat="server" Text="Alterar Filme" OnClick="btnEditarFilme_Click" />
         </div>
-    </form>
-</body>
-</html>
+    </main>
+</asp:Content>
