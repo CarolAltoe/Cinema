@@ -267,7 +267,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROCEDURE [dbo].[selectFilme] 
+Create PROCEDURE [dbo].[selectFilme] 
 	@titulo varchar(255) = '',
 	@descricao varchar(255) = '',
 	@ano_lancamento int = 0,
@@ -459,6 +459,7 @@ CREATE PROCEDURE [dbo].[inserAtuacao]
 )
 AS
 begin
+-- se ja existe atuação, não deixa inserir repetido
 	IF exists(select * from AtorFilme where ator_id = @ator_id and filme_id = @filme_id)
 	begin
 		set @ret = -1
@@ -540,4 +541,28 @@ BEGIN
 		delete from AtorFilme where id = @id
 		set @ret =  1 -- deixa excluir pq não há atuação
 	end	
+END
+
+
+--SELECT Ator-filme
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [dbo].[selectAtorFilme]
+    @ator varchar(255) = '',
+    @filme varchar(255) = '',
+	@categoria varchar(255) = '',
+    @sobrenome varchar(255) = ''
+    --@ret int output
+AS
+BEGIN
+	SELECT f.titulo, f.categoria, a.nome, a.sobrenome
+	FROM Filmes f
+	JOIN AtorFilme af ON f.id = af.filme_id 
+	JOIN Ator a ON af.ator_id = a.id
+	WHERE a.nome = @ator or f.titulo = @filme
+	or @categoria = categoria or @sobrenome = sobrenome
+
 END

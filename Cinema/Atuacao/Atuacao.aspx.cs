@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cinema.DSCinemaTableAdapters;
+using Cinema.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,12 +18,12 @@ namespace Cinema.Atuacao
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnCriarAtuacao_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/Atuacao/Atuacao.aspx");
         }
     }
 }

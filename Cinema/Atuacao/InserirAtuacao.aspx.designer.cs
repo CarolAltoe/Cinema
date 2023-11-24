@@ -7,21 +7,12 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Cinema
+namespace Cinema.Atuacao
 {
 
 
-    public partial class _Default
+    public partial class InserirAtuacao
     {
-
-        /// <summary>
-        /// Controle btnCriarAtuacao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCriarAtuacao;
 
         /// <summary>
         /// Controle lblAtor.
@@ -33,22 +24,13 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.Label lblAtor;
 
         /// <summary>
-        /// Controle txtAtorAtuacao.
+        /// Controle ddlAtor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAtorAtuacao;
-
-        /// <summary>
-        /// Controle Label3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAtor;
 
         /// <summary>
         /// Controle lblFilme.
@@ -60,30 +42,30 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.Label lblFilme;
 
         /// <summary>
-        /// Controle txtFilmeAtuacao.
+        /// Controle ddlFilme.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilmeAtuacao;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFilme;
 
         /// <summary>
-        /// Controle btnPesquisar.
+        /// Controle lblMsgErro.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisar;
+        protected global::System.Web.UI.WebControls.Label lblMsgErro;
 
         /// <summary>
-        /// Controle gvAtuacao.
+        /// Controle btnCadastrarAtuacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAtuacao;
+        protected global::System.Web.UI.WebControls.Button btnCadastrarAtuacao;
     }
 }
