@@ -22,10 +22,6 @@
                     <asp:TextBox class="form-control" ID="txtDescricaoFilme" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-3">
-                    <asp:Label class="label" ID="lblAnoLancamento" runat="server" Text="Digite o ano de lançamento:"></asp:Label>
-                    <asp:TextBox class="form-control" ID="txtAnoLancamento" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
                     <asp:Label class="label" ID="lblCategoria" runat="server" Text="Digite o Categoria:"></asp:Label>
                     <asp:TextBox class="form-control" ID="txtCategoriaFilme" runat="server"></asp:TextBox>
                 </div>

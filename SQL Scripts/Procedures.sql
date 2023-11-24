@@ -270,7 +270,6 @@ GO
 Create PROCEDURE [dbo].[selectFilme] 
 	@titulo varchar(255) = '',
 	@descricao varchar(255) = '',
-	@ano_lancamento int = 0,
 	@categoria varchar(255) = '',
 	@classificacao_indicativa varchar(255) = '',
 	@idioma_id int = 0
@@ -352,7 +351,6 @@ BEGIN
         -- se a consulta NÃO trouxer resultados, não cotinua a alteração
         set @ret = -1 
 	END
-	ELSE IF exists(select * from Filmes where titulo = @titulo)
 	BEGIN
 		-- se existe ator com mesmo nome e sobrenome, não deixo alterar
 		set @ret = -1 

@@ -8,5 +8,6 @@
          <br>
          <asp:Button ID="btnSim" runat="server" Text="Sim" OnClick="btnSim_Click" />
          <asp:Button ID="btnNão" runat="server" Text="Não" OnClick="btnNão_Click" />
+        <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O Idioma está sendo utilizado." Visible="False"></asp:Label>
     </main>
 </asp:Content>

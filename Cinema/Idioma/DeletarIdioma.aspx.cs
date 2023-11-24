@@ -28,7 +28,7 @@ namespace Cinema.Idioma
             ta.DeleteIdioma(id, ref resposta);
             if (resposta == 0) //Idioma com assocociação (não deixa excluir)
             {
-                Response.Write("Volta que vai dar ruim!");
+                lblMsgErro.Visible = true;
             }
             else //Idioma sem associação (deixa excluir)
             {

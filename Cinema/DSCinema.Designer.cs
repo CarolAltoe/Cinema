@@ -2893,7 +2893,6 @@ namespace Cinema.DSCinemaTableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descricao", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ano_lancamento", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@categoria", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@classificacao_indicativa", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idioma_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2952,7 +2951,7 @@ namespace Cinema.DSCinemaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSCinema.FilmeDataTable GetFilme(string titulo, string descricao, string ano_lancamento, string categoria, string classificacao_indicativa, global::System.Nullable<int> idioma_id) {
+        public virtual DSCinema.FilmeDataTable GetFilme(string titulo, string descricao, string categoria, string classificacao_indicativa, global::System.Nullable<int> idioma_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((titulo == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2966,29 +2965,23 @@ namespace Cinema.DSCinemaTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(descricao));
             }
-            if ((ano_lancamento == null)) {
+            if ((categoria == null)) {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ano_lancamento));
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(categoria));
             }
-            if ((categoria == null)) {
+            if ((classificacao_indicativa == null)) {
                 this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(categoria));
-            }
-            if ((classificacao_indicativa == null)) {
-                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(classificacao_indicativa));
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(classificacao_indicativa));
             }
             if ((idioma_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[6].Value = ((int)(idioma_id.Value));
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(idioma_id.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             DSCinema.FilmeDataTable dataTable = new DSCinema.FilmeDataTable();
             this.Adapter.Fill(dataTable);

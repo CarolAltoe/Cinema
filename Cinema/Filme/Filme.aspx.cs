@@ -10,10 +10,10 @@ namespace Cinema.View
     public partial class Filme : System.Web.UI.Page
     {
 
-        void CarregaFilme(string titulo, string descricao, string ano_lancamento, string categoria, string classificacao_indicativa, int idioma_id )
+        void CarregaFilme(string titulo, string descricao, string categoria, string classificacao_indicativa, int idioma_id )
         {
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
-            DSCinema.FilmeDataTable dt = ta.GetFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma_id);
+            DSCinema.FilmeDataTable dt = ta.GetFilme(titulo, descricao, categoria, classificacao_indicativa, idioma_id);
 
             for (int i = 0; i < dt.Count; i++)
             {
@@ -51,11 +51,10 @@ namespace Cinema.View
         {
             string titulo = txtTituloFilme.Text;
             string descricao = txtDescricaoFilme.Text;
-            string ano_lancamento = txtAnoLancamento.Text;
             string categoria = txtCategoriaFilme.Text;
             string classificacao_indicativa = txtClassificacaoIndicativa.Text;
             int idioma = Convert.ToInt32(ddlIdioma.SelectedValue);
-            CarregaFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma);
+            CarregaFilme(titulo, descricao, categoria, classificacao_indicativa, idioma);
         }
 
         protected void btnCriarFilme_Click(object sender, EventArgs e)

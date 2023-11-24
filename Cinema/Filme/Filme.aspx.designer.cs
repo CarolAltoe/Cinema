@@ -60,24 +60,6 @@ namespace Cinema.View
         protected global::System.Web.UI.WebControls.TextBox txtDescricaoFilme;
 
         /// <summary>
-        /// Controle lblAnoLancamento.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnoLancamento;
-
-        /// <summary>
-        /// Controle txtAnoLancamento.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnoLancamento;
-
-        /// <summary>
         /// Controle lblCategoria.
         /// </summary>
         /// <remarks>
