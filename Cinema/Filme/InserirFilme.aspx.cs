@@ -37,18 +37,21 @@ namespace Cinema
             int idioma = Convert.ToInt32(ddlIdioma.SelectedValue);
             int? retorno = null;
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
-            ta.InsertFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma,  ref retorno);
+            ta.InsertFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma, ref retorno);
             if (retorno == -1)
             {
                 lblMsgErro.Visible = true;
             }
             else
             {
-                Response.Redirect("Filme.aspx");
+
             }
 
         }
 
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Filme.aspx");
+        }
     }
- 
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Cinema.Filme
 {
-    public partial class EditarFilme : System.Web.UI.Page
+    public partial class DetalhesFilme : System.Web.UI.Page
     {
         int id;
         protected void Page_Load(object sender, EventArgs e)
@@ -31,29 +31,12 @@ namespace Cinema.Filme
             }
         }
 
-        protected void btnEditarFilme_Click(object sender, EventArgs e)
+        protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            int? resposta = null;
-            string titulo = txtTitulo.Text;
-            int ano_lancamento = Convert.ToInt32(txtAnoLancamento.Text);
-            string descricao = txtDescricao.Text;
-            string categoria = txtCategoria.Text;
-            string classificacao_indicativa = txtClassificacaoIndicativa.Text;
-            int idioma = Convert.ToInt32(ddlIdioma.SelectedValue);
-            DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
-            ta.UpdateFilme(id, titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma, ref resposta);
-            if (resposta == 0) // permite edição
-            {
-                Response.Redirect("Filme.aspx");
-            }
-            else //não permite edição
-            {
-                Response.Redirect("Filme.aspx");
-            }
+            Response.Redirect("Filme.aspx");
         }
 
-
-            void CarregaIdioma()
+        void CarregaIdioma()
         {
             DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
             var result = ta.GetIdioma("");
@@ -61,11 +44,6 @@ namespace Cinema.Filme
             ddlIdioma.DataTextField = "descricao";
             ddlIdioma.DataValueField = "id";
             ddlIdioma.DataBind();
-        }
-
-        protected void btnVoltar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Filme.aspx");
         }
     }
 }

@@ -260,6 +260,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Filme\DeletarFilme.aspx" />
+    <Content Include="Filme\DetalhesFilme.aspx" />
     <Content Include="Filme\EditarFilme.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Ator\InserirAtor.aspx" />
@@ -391,6 +392,13 @@
     </Compile>
     <Compile Include="Filme\DeletarFilme.aspx.designer.cs">
       <DependentUpon>DeletarFilme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Filme\DetalhesFilme.aspx.cs">
+      <DependentUpon>DetalhesFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Filme\DetalhesFilme.aspx.designer.cs">
+      <DependentUpon>DetalhesFilme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Filme\EditarFilme.aspx.cs">
       <DependentUpon>EditarFilme.aspx</DependentUpon>

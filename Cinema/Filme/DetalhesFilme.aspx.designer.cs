@@ -7,21 +7,12 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Cinema.View
+namespace Cinema.Filme
 {
 
 
-    public partial class Filme
+    public partial class DetalhesFilme
     {
-
-        /// <summary>
-        /// Controle btnCriarFilme.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCriarFilme;
 
         /// <summary>
         /// Controle lblTitulo.
@@ -33,31 +24,67 @@ namespace Cinema.View
         protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
-        /// Controle txtTituloFilme.
+        /// Controle txtTitulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTituloFilme;
+        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
 
         /// <summary>
-        /// Controle lblCategoria.
+        /// Controle lblDescricao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoria;
+        protected global::System.Web.UI.WebControls.Label lblDescricao;
 
         /// <summary>
-        /// Controle txtCategoriaFilme.
+        /// Controle txtDescricao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCategoriaFilme;
+        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
+
+        /// <summary>
+        /// Controle lblAnoLancamento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAnoLancamento;
+
+        /// <summary>
+        /// Controle txtAnoLancamento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnoLancamento;
+
+        /// <summary>
+        /// Controle lblIdioma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdioma;
+
+        /// <summary>
+        /// Controle ddlIdioma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlIdioma;
 
         /// <summary>
         /// Controle lblClassificacaoIndicativa.
@@ -78,21 +105,30 @@ namespace Cinema.View
         protected global::System.Web.UI.WebControls.TextBox txtClassificacaoIndicativa;
 
         /// <summary>
-        /// Controle btnPesquisar.
+        /// Controle lblCategoria.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisar;
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
 
         /// <summary>
-        /// Controle gvFilme.
+        /// Controle txtCategoria.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvFilme;
+        protected global::System.Web.UI.WebControls.TextBox txtCategoria;
+
+        /// <summary>
+        /// Controle btnEditarFilme.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditarFilme;
     }
 }

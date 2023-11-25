@@ -2,13 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main>
-
+    <main class="container mt-4">
         <h1>Filmes</h1>
-
         <hr />
         <div class="d-flex justify-content-end">
-            <asp:Button ID="btnCriarFilme" class="btn btn-primary " runat="server" Text="Criar Filme" OnClick="btnCriarFilme_Click" />
+            <asp:Button ID="btnCriarFilme" class="btn btn-success " runat="server" Text="Criar Filme" OnClick="btnCriarFilme_Click" />
         </div>
         <div>
             <h4>Pesquisar Filme</h4>
@@ -18,16 +16,8 @@
                     <asp:TextBox class="form-control" ID="txtTituloFilme" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-3">
-                    <asp:Label class="label" ID="lblDescricao" runat="server" Text="Digite a descrição:"></asp:Label>
-                    <asp:TextBox class="form-control" ID="txtDescricaoFilme" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:Label class="label" ID="lblCategoria" runat="server" Text="Digite o Categoria:"></asp:Label>
+                    <asp:Label class="label" ID="lblCategoria" runat="server" Text="Digite a categoria:"></asp:Label>
                     <asp:TextBox class="form-control" ID="txtCategoriaFilme" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:Label class="label" ID="lblIdioma" runat="server" Text="Digite o idioma:"></asp:Label>
-                    <asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" class="form-select"></asp:DropDownList>
                 </div>
                 <div class="col-md-3">
                     <asp:Label class="label" ID="lblClassificacaoIndicativa" runat="server" Text="Digite a classificação indicativa:"></asp:Label>
@@ -35,9 +25,9 @@
                 </div>
             </div>
             <br />
-            <div class="row col-md-7 ">
-                <asp:Button ID="btnPesquisar" class="btn btn-primary" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
-            </div>
+            
+                <asp:Button ID="btnPesquisar" class="btn btn-dark" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
+            
 
 
             <br />
@@ -55,10 +45,5 @@
             </asp:GridView>
 
         </div>
-
-
     </main>
-
-
-
 </asp:Content>

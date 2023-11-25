@@ -8,7 +8,7 @@
 
         <hr />
         <div class="d-flex justify-content-end">
-           <asp:Button ID="btnCriarIdioma" class="btn btn-primary " runat="server" Text="Criar Idioma" OnClick="btnCriarIdioma_Click" />
+            <asp:Button ID="btnCriarIdioma" class="btn btn-success " runat="server" Text="Criar Idioma" OnClick="btnCriarIdioma_Click" />
         </div>
         <div>
             <h4>Pesquisar Idioma</h4>
@@ -19,10 +19,7 @@
                 </div>
             </div>
             <br />
-            <div class="row col-md-7 ">
-                <asp:Button ID="btnPesquisar" class="btn btn-primary" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
-            </div>
-            
+            <asp:Button ID="btnPesquisar" class="btn btn-dark" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
             <br />
             <br />
 

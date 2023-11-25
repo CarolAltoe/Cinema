@@ -247,11 +247,10 @@ BEGIN
         -- se a consulta NÃO trouxer resultados, não continua a exclusão 
         set @ret = -1 
 	END
-	-- se existe atuação, faço tal coisa 
-/*	IF exists (select * from AtorFilme where ator_id = @id)
+	IF exists (select * from Filmes where idioma_id = @id)
 	begin
 		set @ret = 0 -- não deixa excluir pq há atuações
-	end*/
+	end
 	ELSE
 	begin
 		delete from Idiomas where id = @id
@@ -269,10 +268,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 Create PROCEDURE [dbo].[selectFilme] 
 	@titulo varchar(255) = '',
-	@descricao varchar(255) = '',
 	@categoria varchar(255) = '',
-	@classificacao_indicativa varchar(255) = '',
-	@idioma_id int = 0
+	@classificacao_indicativa varchar(255) = ''
 AS
 BEGIN
 	select * 
@@ -280,7 +277,6 @@ BEGIN
 	where titulo like '%' + @titulo + '%' 
 	AND  categoria like '%' + @categoria + '%'
 	AND  classificacao_indicativa like '%' + @classificacao_indicativa + '%'
-	AND  idioma_id = @idioma_id
 END
 
 
@@ -351,11 +347,6 @@ BEGIN
         -- se a consulta NÃO trouxer resultados, não cotinua a alteração
         set @ret = -1 
 	END
-	BEGIN
-		-- se existe ator com mesmo nome e sobrenome, não deixo alterar
-		set @ret = -1 
-	END
-	ELSE
 	BEGIN
 		UPDATE Filmes 
 		SET titulo = @titulo, descricao = @descricao, ano_lancamento = @ano_lancamento,

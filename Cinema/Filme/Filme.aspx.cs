@@ -10,16 +10,17 @@ namespace Cinema.View
     public partial class Filme : System.Web.UI.Page
     {
 
-        void CarregaFilme(string titulo, string descricao, string categoria, string classificacao_indicativa, int idioma_id )
+        void CarregaFilme(string titulo, string categoria, string classificacao_indicativa )
         {
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
-            DSCinema.FilmeDataTable dt = ta.GetFilme(titulo, descricao, categoria, classificacao_indicativa, idioma_id);
+            DSCinema.FilmeDataTable dt = ta.GetFilme(titulo, categoria, classificacao_indicativa);
 
             for (int i = 0; i < dt.Count; i++)
             {
                 string editar = "<a href = 'EditarFilme?id=" + dt[i].id + "'>Editar</a>";
                 string deletar = "<a href = 'DeletarFilme?id=" + dt[i].id + "'>Deletar</a>";
-                string link = editar + " | " + deletar;
+                string detalhes = "<a href = 'DetalhesFilme?id=" + dt[i].id + "'>Detalhes</a>";
+                string link = editar + " | " + deletar + " | " + detalhes;
                 dt[i].link = link;
 
             }
@@ -28,33 +29,23 @@ namespace Cinema.View
             gvFilme.DataBind();
         }
 
-        void CarregaIdioma()
-        {
-            DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
-            var result = ta.GetIdioma("");
-            ddlIdioma.DataSource = result;
-            ddlIdioma.DataTextField = "descricao";
-            ddlIdioma.DataValueField = "id";
-            ddlIdioma.DataBind();
-        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                CarregaIdioma();
+                CarregaFilme("", "", "");
             }
-           }
+           }    
 
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
             string titulo = txtTituloFilme.Text;
-            string descricao = txtDescricaoFilme.Text;
             string categoria = txtCategoriaFilme.Text;
             string classificacao_indicativa = txtClassificacaoIndicativa.Text;
-            int idioma = Convert.ToInt32(ddlIdioma.SelectedValue);
-            CarregaFilme(titulo, descricao, categoria, classificacao_indicativa, idioma);
+            CarregaFilme(titulo, categoria, classificacao_indicativa);
         }
 
         protected void btnCriarFilme_Click(object sender, EventArgs e)

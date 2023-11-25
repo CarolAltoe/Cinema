@@ -23,12 +23,21 @@ namespace Cinema
             if (retorno == -1)
             {
                 lblMsgErro.Visible = true;
+                timerHideErrorMessage.Enabled = true;
             }
             else
             {
                 Response.Redirect("Idioma.aspx");
             }
 
+        }
+        protected void timerHideErrorMessage_Tick(object sender, EventArgs e)
+        {
+            // Esconde a mensagem de erro quando o Timer atinge o intervalo especificado
+            lblMsgErro.Visible = false;
+
+            // Desabilita o Timer após esconder a mensagem
+            timerHideErrorMessage.Enabled = false;
         }
     }
 }
