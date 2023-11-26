@@ -33,7 +33,7 @@ namespace Cinema.Ator
             }
             else //não permite edição
             {
-                Response.Redirect("Ator.aspx");
+                lblMsgErro.Visible = true;
             }
         }
 

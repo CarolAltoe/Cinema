@@ -48,7 +48,7 @@ namespace Cinema.Filme
             }
             else //não permite edição
             {
-                Response.Redirect("Filme.aspx");
+                lblMsgErro.Visible = true;
             }
         }
 

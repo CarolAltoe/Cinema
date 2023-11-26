@@ -28,7 +28,7 @@
             </div>
 
             <div class="col-md-4">
-                <asp:Label ID="lblIdioma" class="label" runat="server" Text="Digite o idioma:"></asp:Label>
+                <asp:Label ID="lblIdioma" class="label" runat="server" Text="Selecione o idioma:"></asp:Label>
                 <asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" class="form-select"></asp:DropDownList>
                 <asp:RequiredFieldValidator ID="rfvIdioma" runat="server"
                     ControlToValidate="ddlIdioma"
@@ -57,7 +57,6 @@
                 </asp:RequiredFieldValidator>
             </div>
             <br />
-            <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O filme inserido já existe." Visible="False"></asp:Label>
             <br />
         </div>
         <asp:Label ID="lblDescricao" class="label" runat="server" Text="Digite a descrição:"></asp:Label>
@@ -68,6 +67,7 @@
             ErrorMessage="Descrição obrigatória">
         </asp:RequiredFieldValidator>
         <br />
+        <asp:Label ID="lblMsgErro" runat="server" Text="Erro! Já existe um filme com esse título." Visible="False"></asp:Label>
         <asp:Button ID="btnEditarFilme" class="btn btn-success" runat="server" Text="Alterar Filme" OnClick="btnEditarFilme_Click" />
         <asp:Button ID="btnVoltar" class="btn btn-secondary" runat="server" Text="Voltar" OnClick="btnVoltar_Click" CausesValidation="False" />
     </main>

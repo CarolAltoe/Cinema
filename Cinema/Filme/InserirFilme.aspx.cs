@@ -44,7 +44,7 @@ namespace Cinema
             }
             else
             {
-
+                Response.Redirect("Filme.aspx");
             }
 
         }

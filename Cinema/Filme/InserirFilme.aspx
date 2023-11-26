@@ -61,8 +61,6 @@
             </div>
 
             <br />
-            <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O ator inserido já existe." Visible="False"></asp:Label>
-            <br />
             <br />
 
         </div>
@@ -73,6 +71,9 @@
             Display="Dynamic"
             ErrorMessage="Descrição obrigatória">
         </asp:RequiredFieldValidator>
+        <br />
+
+        <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O filme inserido já existe." Visible="False"></asp:Label>
         <br />
         <asp:Button ID="btnCadastrarFilme" class="btn btn-success" runat="server" Text="Cadastrar Filme" OnClick="btnCadastrarFilme_Click" />
         <asp:Button ID="btnVoltar" class="btn btn-secondary" runat="server" Text="Voltar" OnClick="btnVoltar_Click" CausesValidation="False" />

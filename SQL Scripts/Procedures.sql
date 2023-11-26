@@ -65,7 +65,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-alter PROCEDURE [dbo].[updateAtor]
+CREATE PROCEDURE [dbo].[updateAtor]
 	@id int, 
 	@nome varchar(255) = '',
 	@sobrenome varchar(255) = '',
@@ -78,14 +78,15 @@ BEGIN
         -- se a consulta NÃO trouxer resultados, não cotinua a alteração
         set @ret = -1 
 	END
-	ELSE IF exists(select * from ator where nome = @nome and sobrenome=@sobrenome)
-	BEGIN
-		-- se existe ator com mesmo nome e sobrenome, não deixo alterar
-		set @ret = -1 
-	END
+	ELSE IF (SELECT COUNT(*) FROM Ator WHERE nome = @nome AND sobrenome = @sobrenome AND id <> @id) > 0
+    BEGIN
+        -- Se a descrição for igual de outra cadastrada no banco, não continua a alteração
+        SET @ret = -1
+    END
 	ELSE
 	BEGIN
 		UPDATE ator SET nome = @nome, sobrenome = @sobrenome where id = @id
+		SET @ret = 0
 	END
 END
 
@@ -206,14 +207,15 @@ BEGIN
         -- se a consulta NÃO trouxer resultados, não cotinua a alteração
         set @ret = -1 
 	END
-	ELSE IF exists(select * from Idiomas where descricao = @descricao)
-	BEGIN
-		-- se existe ator com mesmo nome e sobrenome, não deixo alterar
-		set @ret = -1 
-	END
+	ELSE IF (SELECT COUNT(*) FROM Idiomas WHERE descricao = @descricao AND id <> @id) > 0
+    BEGIN
+        -- Se a descrição for igual de outra cadastrada no banco, não continua a alteração
+        SET @ret = -1
+    END
 	ELSE
 	BEGIN
 		UPDATE Idiomas SET descricao = @descricao where id = @id
+		 SET @ret = 0
 	END
 END
 
@@ -331,30 +333,42 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROCEDURE [dbo].[updateFilme]
-	@id int, 
-	@titulo varchar(255) = '',
-	@descricao varchar(255) = '',
-	@ano_lancamento int = 0,
-	@categoria varchar(255) = '',
-	@classificacao_indicativa varchar(255) = '',
-	@idioma_id int = 0,
-	@ret int output
+    @id int, 
+    @titulo varchar(255) = '',
+    @descricao varchar(255) = '',
+    @ano_lancamento int = 0,
+    @categoria varchar(255) = '',
+    @classificacao_indicativa varchar(255) = '',
+    @idioma_id int = 0,
+    @ret int output
 AS
 BEGIN 
-	-- Verificar se a consulta NÃO retorna resultados
-    IF NOT EXISTS (SELECT 1 FROM Filmes WHERE id = @id )
+    -- Verificar se a consulta NÃO retorna resultados
+    IF NOT EXISTS (SELECT 1 FROM Filmes WHERE id = @id)
     BEGIN
-        -- se a consulta NÃO trouxer resultados, não cotinua a alteração
-        set @ret = -1 
-	END
-	BEGIN
-		UPDATE Filmes 
-		SET titulo = @titulo, descricao = @descricao, ano_lancamento = @ano_lancamento,
-		categoria = @categoria, classificacao_indicativa = @classificacao_indicativa,
-		idioma_id = @idioma_id
-		where id = @id
-	END
+        -- Se a consulta NÃO trouxer resultados, não continua a alteração
+        SET @ret = -1 
+    END
+    ELSE IF (SELECT COUNT(*) FROM Filmes WHERE titulo = @titulo AND id <> @id) > 0
+    BEGIN
+        -- Se o título já existe para outro filme, não continua a alteração
+        SET @ret = -1
+    END
+    ELSE
+    BEGIN
+        -- Se tudo estiver OK, realiza o UPDATE
+        UPDATE Filmes 
+        SET titulo = @titulo, descricao = @descricao, ano_lancamento = @ano_lancamento,
+        categoria = @categoria, classificacao_indicativa = @classificacao_indicativa,
+        idioma_id = @idioma_id
+        WHERE id = @id
+
+        -- Define o valor de @ret como 0 para indicar sucesso
+        SET @ret = 0
+    END
 END
+
+
 
 --DELETE FILME
 
