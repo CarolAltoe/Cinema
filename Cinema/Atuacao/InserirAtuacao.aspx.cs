@@ -13,37 +13,49 @@ namespace Cinema.Atuacao
         {
             if (!IsPostBack)
             {
-                //CarregaAtor();
-                //CarregarFilme();
+                CarregaAtor();
+                CarregaFilme();
             }
         }
 
-        protected void btnCadastrarAtuacao_Click(object sender, EventArgs e)
-        {
-
-        }
-        /*
         void CarregaAtor()
         {
             DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
-            var result = ta.GetAtor("");
+            var result = ta.GetAtor("", "");
+            result.Columns.Add("NomeCompleto", typeof(string), "nome + ' ' + sobrenome");
             ddlAtor.DataSource = result;
-            ddlAtor.DataTextField = "descricao";
+            ddlAtor.DataTextField = "NomeCompleto";
             ddlAtor.DataValueField = "id";
             ddlAtor.DataBind();
-
         }
 
         void CarregaFilme()
         {
-            DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
-            var result = ta.GetAtor("");
+            DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
+            var result = ta.GetFilme("", "","", "", 0);
             ddlFilme.DataSource = result;
-            ddlFilme.DataTextField = "descricao";
+            ddlFilme.DataTextField = "titulo";
             ddlFilme.DataValueField = "id";
             ddlFilme.DataBind();
         }
 
-        */
+        protected void btnCadastrarAtuacao_Click(object sender, EventArgs e)
+        {
+            int ator = Convert.ToInt32(ddlAtor.SelectedValue);
+            int filme = Convert.ToInt32(ddlFilme.SelectedValue);
+            int? retorno = null;
+            DSCinemaTableAdapters.AtuacaoTableAdapter ta = new DSCinemaTableAdapters.AtuacaoTableAdapter();
+            ta.insertAtuacao(ator, filme, ref retorno);
+            if (retorno == -1)
+            {
+                lblMsgErro.Visible = true;
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
+        }
+        
+       
     }
 }
