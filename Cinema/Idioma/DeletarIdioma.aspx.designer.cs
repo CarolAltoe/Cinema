@@ -24,6 +24,15 @@ namespace Cinema.Idioma
         protected global::System.Web.UI.WebControls.Label lblDescricao;
 
         /// <summary>
+        /// Controle lblMsgErro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsgErro;
+
+        /// <summary>
         /// Controle btnSim.
         /// </summary>
         /// <remarks>
@@ -40,14 +49,5 @@ namespace Cinema.Idioma
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNão;
-
-        /// <summary>
-        /// Controle lblMsgErro.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgErro;
     }
 }

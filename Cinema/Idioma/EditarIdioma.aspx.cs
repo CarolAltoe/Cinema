@@ -32,7 +32,7 @@ namespace Cinema.Idioma
             }
             else //não permite edição
             {
-                Response.Redirect("Idioma.aspx");
+                lblMsgErro.Visible = true;
             }
         }
     }

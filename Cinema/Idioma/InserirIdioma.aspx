@@ -5,15 +5,19 @@
         <h1>Criação de Idiomas</h1>
 
         <hr />
-        <div>
-            <asp:Label ID="lblDescricao" class="label" runat="server" Text="Descricao"></asp:Label>
+        <div class="mb-3">
+            <asp:Label ID="lblDescricao" class="label" runat="server" Text="Descrição"></asp:Label>
             <br />
             <asp:TextBox ID="txtDescricao" runat="server" class="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDescricao" runat="server"
+                ControlToValidate="txtDescricao"
+                Display="Dynamic"
+                ErrorMessage="Descrição é um campo obrigatório.">
+            </asp:RequiredFieldValidator>
             <br />
-
-            <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O ator inserido já existe." Visible="False"></asp:Label>
-            <br />
-            <asp:Button ID="btnCadastrarIdioma" class="btn btn-primary" runat="server" Text="Cadastrar Idioma" OnClick="btnCadastrarIdioma_Click" />
+            <asp:Timer ID="timerHideErrorMessage" runat="server" Interval="3000" OnTick="timerHideErrorMessage_Tick" Enabled="false" />
+            <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O idioma inserido já existe." Visible="False"></asp:Label>
         </div>
+        <asp:Button ID="btnCadastrarIdioma" class="btn btn-success" runat="server" Text="Cadastrar Idioma" OnClick="btnCadastrarIdioma_Click" />
     </main>
 </asp:Content>

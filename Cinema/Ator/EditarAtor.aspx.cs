@@ -29,12 +29,17 @@ namespace Cinema.Ator
             ta.EditarAtor(id, txtNome.Text, txtSobrenome.Text, ref resposta);
             if (resposta == 0) // permite edição
             {
-                Response.Redirect("Ator.aspx"); 
+                Response.Redirect("Ator.aspx");
             }
             else //não permite edição
             {
-                Response.Redirect("Ator.aspx");
+                lblMsgErro.Visible = true;
             }
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ator.aspx");
         }
     }
 }

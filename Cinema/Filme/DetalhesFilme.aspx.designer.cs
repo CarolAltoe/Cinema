@@ -7,11 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Cinema
+namespace Cinema.Filme
 {
 
 
-    public partial class InserirFilme
+    public partial class DetalhesFilme
     {
 
         /// <summary>
@@ -33,13 +33,22 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
 
         /// <summary>
-        /// Controle rfvTitulo.
+        /// Controle lblDescricao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTitulo;
+        protected global::System.Web.UI.WebControls.Label lblDescricao;
+
+        /// <summary>
+        /// Controle txtDescricao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
 
         /// <summary>
         /// Controle lblAnoLancamento.
@@ -60,15 +69,6 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.TextBox txtAnoLancamento;
 
         /// <summary>
-        /// Controle RequiredFieldValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-        /// <summary>
         /// Controle lblIdioma.
         /// </summary>
         /// <remarks>
@@ -85,15 +85,6 @@ namespace Cinema
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlIdioma;
-
-        /// <summary>
-        /// Controle rfvIdioma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdioma;
 
         /// <summary>
         /// Controle lblClassificacaoIndicativa.
@@ -114,15 +105,6 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.TextBox txtClassificacaoIndicativa;
 
         /// <summary>
-        /// Controle rfvClassificacaoIndicativa.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClassificacaoIndicativa;
-
-        /// <summary>
         /// Controle lblCategoria.
         /// </summary>
         /// <remarks>
@@ -141,66 +123,12 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.TextBox txtCategoria;
 
         /// <summary>
-        /// Controle rfvCategoria.
+        /// Controle btnEditarFilme.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategoria;
-
-        /// <summary>
-        /// Controle lblDescricao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescricao;
-
-        /// <summary>
-        /// Controle txtDescricao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
-
-        /// <summary>
-        /// Controle rfvDescricao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescricao;
-
-        /// <summary>
-        /// Controle lblMsgErro.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgErro;
-
-        /// <summary>
-        /// Controle btnCadastrarFilme.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrarFilme;
-
-        /// <summary>
-        /// Controle btnVoltar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVoltar;
+        protected global::System.Web.UI.WebControls.Button btnEditarFilme;
     }
 }
