@@ -11,18 +11,23 @@ namespace Cinema.View
     {
         void CarregaIdioma(string descricao)
         {
+            //carrega dados de idioma
             DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
             DSCinema.IdiomaDataTable dt = ta.GetIdioma(descricao);
 
-            for (int i = 0; i < dt.Count; i++)
+            for (int i = 0; i < dt.Count; i++) //constrói os links para cada idioma cadastrado
             {
+                /*
+                    decisão de projeto de não colocar link para detalhes do idioma pela quantidade de atributos
+                    que o mesmo possui: como são poucos, não viu-se necessidade
+                */
                 string editar = "<a href = 'EditarIdioma?id=" + dt[i].id + "'>Editar</a>";
                 string deletar = "<a href = 'DeletarIdioma?id=" + dt[i].id + "'>Deletar</a>";
                 string link = editar + " | " + deletar;
                 dt[i].link = link;
 
             }
-
+           
             gvIdioma.DataSource = dt;
             gvIdioma.DataBind();
         }

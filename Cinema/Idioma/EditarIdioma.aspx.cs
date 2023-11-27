@@ -15,6 +15,7 @@ namespace Cinema.Idioma
             id = Convert.ToInt32(Request.QueryString["id"]);
             if (!IsPostBack)
             {
+                //carrega idioma, a ser editado, na tela
                 DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
                 DSCinema.IdiomaDataTable dt = ta.GetIdiomaById(id);
                 txtDescricao.Text = dt[0].descricao;
@@ -30,10 +31,15 @@ namespace Cinema.Idioma
             {
                 Response.Redirect("Idioma.aspx");
             }
-            else //não permite edição
+            else //não permite edição, pois cai nas condições da procedure
             {
                 lblMsgErro.Visible = true;
             }
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Idioma.aspx");
         }
     }
 }

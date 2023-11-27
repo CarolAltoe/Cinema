@@ -15,6 +15,7 @@ namespace Cinema.Idioma
             id = Convert.ToInt32(Request.QueryString["id"]);
             if (!IsPostBack)
             {
+                //carrega idioma, a ser excluído, na tela
                 DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
                 DSCinema.IdiomaDataTable dt = ta.GetIdiomaById(id);
                 lblDescricao.Text = dt[0].descricao;

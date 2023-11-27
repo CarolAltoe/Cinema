@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <main>
-        <h1>Detalhes de Filme</h1>
+        <h1>Detalhes do Filme:</h1>
 
         <hr />
         <div class="row">
@@ -41,6 +41,6 @@
             <br />
             
         </div>
-        <asp:Button ID="btnEditarFilme" class="btn btn-secondary" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+        <asp:Button ID="btnEditarFilme" class="btn btn-secondary" runat="server" Text="Voltar para página de Filmes" OnClick="btnVoltar_Click" />
     </main>
 </asp:Content>

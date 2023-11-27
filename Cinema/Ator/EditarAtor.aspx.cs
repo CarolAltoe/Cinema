@@ -15,6 +15,7 @@ namespace Cinema.Ator
             id = Convert.ToInt32(Request.QueryString["id"]);
             if (!IsPostBack)
             {
+                //carrega nome+sobrenome do ator, a ser editado, na tela
                 DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
                 DSCinema.AtorDataTable dt = ta.GetAtorById(id);
                 txtNome.Text = dt[0].nome;
@@ -31,7 +32,7 @@ namespace Cinema.Ator
             {
                 Response.Redirect("Ator.aspx");
             }
-            else //não permite edição
+            else // não permite edição, pois cai na condição da procedure
             {
                 lblMsgErro.Visible = true;
             }

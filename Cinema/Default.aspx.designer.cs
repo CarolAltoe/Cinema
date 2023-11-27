@@ -42,15 +42,6 @@ namespace Cinema
         protected global::System.Web.UI.WebControls.TextBox txtAtorAtuacao;
 
         /// <summary>
-        /// Controle Label3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-
-        /// <summary>
         /// Controle lblFilme.
         /// </summary>
         /// <remarks>

@@ -4,12 +4,7 @@ USE [Cinema]
 --PROCEDURES ATOR
 
 --SELECT ATOR
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROCEDURE [dbo].[selectAtor] 
+CREATE PROCEDURE selectAtor
 	@nome varchar(255) = '',@sobrenome varchar(255) = ''
 AS
 BEGIN
@@ -19,13 +14,8 @@ BEGIN
 		sobrenome like '%' + @sobrenome + '%'
 END
 
-
+-----------------------------------------------------------------
 -- SELECT BY ID
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE selectAtorById
 	@id int
 AS
@@ -33,13 +23,8 @@ BEGIN
 	select * from ator where id = @id
 END
 
-
+-----------------------------------------------------------------
 --INSERT ATOR
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[insertAtor]
 (
 	@nome varchar(255),
@@ -58,13 +43,8 @@ begin
 	end
 END
 
-
+-----------------------------------------------------------------
 --UPDATE ATOR
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[updateAtor]
 	@id int, 
 	@nome varchar(255) = '',
@@ -75,41 +55,23 @@ BEGIN
 	-- Verificar se a consulta NÃO retorna resultados
     IF NOT EXISTS (SELECT 1 FROM Ator WHERE id = @id )
     BEGIN
-        -- se a consulta NÃO trouxer resultados, não cotinua a alteração
+        -- se a consulta NÃO trouxer resultados, não continua a CREATEação
         set @ret = -1 
 	END
 	ELSE IF (SELECT COUNT(*) FROM Ator WHERE nome = @nome AND sobrenome = @sobrenome AND id <> @id) > 0
     BEGIN
-        -- Se a descrição for igual de outra cadastrada no banco, não continua a alteração
+        -- Se o ator for igual de outro cadastrado no banco, não continua a CREATEação
         SET @ret = -1
     END
-	ELSE
+	ELSE -- permite CREATEação
 	BEGIN
 		UPDATE ator SET nome = @nome, sobrenome = @sobrenome where id = @id
 		SET @ret = 0
 	END
 END
 
-
+-----------------------------------------------------------------
 --DELETE ATOR
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-/*
-CREATE PROCEDURE [dbo].[deleteAtor] 
-	@id int,
-	@nome varchar(255) = '',
-	@sobrenome varchar(255) = '',
-	@ret int output
-AS
-BEGIN
-	if exists(select * from ator where nome = @nome and sobrenome=@sobrenome)
-		set @ret = -1
-	else
-		DELETE FROM ator where id = @id
-END*/
 CREATE PROCEDURE deleteAtor
 	@id int, @ret int output
 AS
@@ -120,7 +82,7 @@ BEGIN
         -- se a consulta NÃO trouxer resultados, não continua a exclusão 
         set @ret = -1 
 	END
-	-- se existe atuação, faço tal coisa 
+	-- se existe atuação 
 	IF exists (select * from AtorFilme where ator_id = @id)
 	begin
 		set @ret = 0 -- não deixa excluir pq há atuações
@@ -132,15 +94,9 @@ BEGIN
 	end	
 END
 
-
+-----------------------------------------------------------------
 -- PROCEDURES IDIOMA
-
 --SELECT IDIOMA
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[selectIdioma] 
 	@descricao varchar(255) = ''
 AS
@@ -150,13 +106,8 @@ BEGIN
 	where descricao like '%' + @descricao + '%' 
 END
 
+-----------------------------------------------------------------
 -- SELECT BY ID
-
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE selectIdiomaById
 	@id int
 AS
@@ -164,13 +115,8 @@ BEGIN
 	select * from Idiomas where id = @id
 END
 
-
+-----------------------------------------------------------------
 -- INSERT IDIOMA
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[inserIdioma]
 (
 	@descricao varchar(255) = '',
@@ -188,13 +134,8 @@ begin
 	end
 END
 
-
+-----------------------------------------------------------------
 --UPDATE IDIOMA
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[updateIdioma]
 	@id int, 
 	@descricao varchar(255) = '',
@@ -204,14 +145,14 @@ BEGIN
 	-- Verificar se a consulta NÃO retorna resultados
     IF NOT EXISTS (SELECT 1 FROM Idiomas WHERE id = @id )
     BEGIN
-        -- se a consulta NÃO trouxer resultados, não cotinua a alteração
+        -- se a consulta NÃO trouxer resultados, não cotinua a CREATEação
         set @ret = -1 
 	END
 	ELSE IF (SELECT COUNT(*) FROM Idiomas WHERE descricao = @descricao AND id <> @id) > 0
     BEGIN
-        -- Se a descrição for igual de outra cadastrada no banco, não continua a alteração
+        -- Se a descrição for igual de outra cadastrada no banco, não continua a CREATEação
         SET @ret = -1
-    END
+	END
 	ELSE
 	BEGIN
 		UPDATE Idiomas SET descricao = @descricao where id = @id
@@ -219,26 +160,9 @@ BEGIN
 	END
 END
 
+-----------------------------------------------------------------
 
 --DELETE IDIOMA
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-/*
-CREATE PROCEDURE [dbo].[deleteAtor] 
-	@id int,
-	@nome varchar(255) = '',
-	@sobrenome varchar(255) = '',
-	@ret int output
-AS
-BEGIN
-	if exists(select * from ator where nome = @nome and sobrenome=@sobrenome)
-		set @ret = -1
-	else
-		DELETE FROM ator where id = @id
-END*/
 CREATE PROCEDURE deleteIdioma
 	@id int, @ret int output
 AS
@@ -251,7 +175,7 @@ BEGIN
 	END
 	IF exists (select * from Filmes where idioma_id = @id)
 	begin
-		set @ret = 0 -- não deixa excluir pq há atuações
+		set @ret = 0 -- não deixa excluir pq há filmes atrelados 
 	end
 	ELSE
 	begin
@@ -260,15 +184,10 @@ BEGIN
 	end	
 END
 
-
+-----------------------------------------------------------------
 -- PROCEDURES FILME
 --SELECT FILME
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-Create PROCEDURE [dbo].[selectFilme] 
+CREATE PROCEDURE [dbo].[selectFilme] 
 	@titulo varchar(255) = '',
 	@categoria varchar(255) = '',
 	@classificacao_indicativa varchar(255) = ''
@@ -281,13 +200,8 @@ BEGIN
 	AND  classificacao_indicativa like '%' + @classificacao_indicativa + '%'
 END
 
-
+-----------------------------------------------------------------
 -- SELECT BY ID FILME
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE selectFilmeById
 	@id int
 AS
@@ -295,13 +209,8 @@ BEGIN
 	select * from Filmes where id = @id
 END
 
-
+-----------------------------------------------------------------
 --INSERT FILME
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[inserFilme]
 (
 	@titulo varchar(255) = '',
@@ -325,13 +234,8 @@ begin
 	end
 END
 
-
+-----------------------------------------------------------------
 --UPDATE FILME
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[updateFilme]
     @id int, 
     @titulo varchar(255) = '',
@@ -346,12 +250,12 @@ BEGIN
     -- Verificar se a consulta NÃO retorna resultados
     IF NOT EXISTS (SELECT 1 FROM Filmes WHERE id = @id)
     BEGIN
-        -- Se a consulta NÃO trouxer resultados, não continua a alteração
+        -- Se a consulta NÃO trouxer resultados, não continua a CREATEação
         SET @ret = -1 
     END
     ELSE IF (SELECT COUNT(*) FROM Filmes WHERE titulo = @titulo AND id <> @id) > 0
     BEGIN
-        -- Se o título já existe para outro filme, não continua a alteração
+        -- Se o título já existe para outro filme, não continua a CREATEação
         SET @ret = -1
     END
     ELSE
@@ -363,34 +267,13 @@ BEGIN
         idioma_id = @idioma_id
         WHERE id = @id
 
-        -- Define o valor de @ret como 0 para indicar sucesso
+        -- Retorna 0 para indicar sucesso
         SET @ret = 0
     END
 END
 
-
-
---DELETE FILME
-
-GO
-
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-/*
-CREATE PROCEDURE [dbo].[deleteAtor] 
-	@id int,
-	@nome varchar(255) = '',
-	@sobrenome varchar(255) = '',
-	@ret int output
-AS
-BEGIN
-	if exists(select * from ator where nome = @nome and sobrenome=@sobrenome)
-		set @ret = -1
-	else
-		DELETE FROM ator where id = @id
-END*/
+-----------------------------------------------------------------
+-- DELETE FILME
 CREATE PROCEDURE deleteFilme
 	@id int, @ret int output
 AS
@@ -413,48 +296,39 @@ BEGIN
 	end	
 END
 
-
-
+-----------------------------------------------------------------
 -- PROCEDURES ATUAÇÃO
-
 --SELECT ATUAÇÃO
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[selectAtuacao] 
-	@ator_id int = 0,
-	@filme_id int = 0
+	@ator varchar(255) = '',
+	@filme varchar(255) = ''
 AS
 BEGIN
-	select * 
-	from AtorFilme
-	where ator_id = @ator_id AND filme_id = @filme_id
+	SELECT
+        af.id, 
+		af.ator_id,
+        a.nome,
+        a.sobrenome,
+        af.filme_id,
+        f.titulo,
+        f.descricao,
+        f.ano_lancamento,
+        f.categoria,
+        f.idioma_id,
+        f.classificacao_indicativa
+    FROM
+        AtorFilme af
+    INNER JOIN
+        Ator a ON af.ator_id = a.id
+    INNER JOIN
+        Filmes f ON af.filme_id = f.id
+	WHERE a.nome LIKE '%' + @ator + '%' 
+        AND f.titulo LIKE '%' + @filme + '%';
 END
 
--- SELECT BY ID ATUAÇÃO
-
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROCEDURE selectAtuacaoById
-	@id int
-AS
-BEGIN
-	select * from Idiomas where id = @id
-END
-
-
+-----------------------------------------------------------------
 -- INSERT ATUAÇÃO
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROCEDURE [dbo].[inserAtuacao]
+CREATE PROCEDURE InsertAtuacao
 (
 	@ator_id int = 0,
 	@filme_id int = 0,
@@ -473,99 +347,4 @@ begin
 	end
 END
 
-
---UPDATE ATUAÇÃO
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROCEDURE [dbo].[updateAtuacao]
-	@id int, 
-	@ator_id int = 0,
-	@filme_id int = 0,
-	@ret int output
-AS
-BEGIN 
-	-- Verificar se a consulta NÃO retorna resultados
-    IF NOT EXISTS (SELECT 1 FROM AtorFilme WHERE id = @id )
-    BEGIN
-        -- se a consulta NÃO trouxer resultados, não cotinua a alteração
-        set @ret = -1 
-	END
-	--ELSE IF exists(select * from AtorFilme where descricao = @descricao)
-	BEGIN
-		-- se existe ator com mesmo nome e sobrenome, não deixo alterar
-		set @ret = -1 
-	END
-	ELSE
-	BEGIN
-		UPDATE AtorFilme SET descricao = @descricao where id = @id
-	END
-END
-
-
---DELETE ATUAÇÃO
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-/*
-CREATE PROCEDURE [dbo].[deleteAtor] 
-	@id int,
-	@nome varchar(255) = '',
-	@sobrenome varchar(255) = '',
-	@ret int output
-AS
-BEGIN
-	if exists(select * from ator where nome = @nome and sobrenome=@sobrenome)
-		set @ret = -1
-	else
-		DELETE FROM ator where id = @id
-END*/
-CREATE PROCEDURE deleteAtuacao
-	@id int, @ret int output
-AS
-BEGIN
-	-- Verificar se a consulta NÃO retorna resultados
-    IF NOT EXISTS (SELECT 1 FROM AtorFilme WHERE id = @id )
-    BEGIN
-        -- se a consulta NÃO trouxer resultados, não continua a exclusão 
-        set @ret = -1 
-	END
-	-- se existe atuação, faço tal coisa 
-/*	IF exists (select * from AtorFilme where ator_id = @id)
-	begin
-		set @ret = 0 -- não deixa excluir pq há atuações
-	end*/
-	ELSE
-	begin
-		delete from AtorFilme where id = @id
-		set @ret =  1 -- deixa excluir pq não há atuação
-	end	
-END
-
-
---SELECT Ator-filme
-GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create PROCEDURE [dbo].[selectAtorFilme]
-    @ator varchar(255) = '',
-    @filme varchar(255) = '',
-	@categoria varchar(255) = '',
-    @sobrenome varchar(255) = ''
-    --@ret int output
-AS
-BEGIN
-	SELECT f.titulo, f.categoria, a.nome, a.sobrenome
-	FROM Filmes f
-	JOIN AtorFilme af ON f.id = af.filme_id 
-	JOIN Ator a ON af.ator_id = a.id
-	WHERE a.nome = @ator or f.titulo = @filme
-	or @categoria = categoria or @sobrenome = sobrenome
-
-END
+-----------------------------------------------------------------

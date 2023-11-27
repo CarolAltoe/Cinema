@@ -51,7 +51,6 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Ator/Ator">Atores</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Filme/Filme">Filmes</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Idioma/Idioma">Idioma</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Atuacao/Atuacao">Atuação</a></li>
                     </ul>
                 </div>
             </div>

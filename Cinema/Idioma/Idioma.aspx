@@ -23,7 +23,7 @@
             <br />
             <br />
 
-            <h4>Lista de idiomas</h4>
+            <h4>Lista de idiomas:</h4>
             <asp:GridView ID="gvIdioma" runat="server" AutoGenerateColumns="False" class="table table-striped table-bordered">
                 <Columns>
                     <asp:BoundField DataField="Descricao" HeaderText="Descricao" SortExpression="Descricao" />

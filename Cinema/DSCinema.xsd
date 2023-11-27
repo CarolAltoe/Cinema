@@ -28,7 +28,7 @@
               <Mapping SourceColumn="sobrenome" DataSetColumn="sobrenome" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.deleteAtor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAtor" Modifier="Public" Name="DeleteAtor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAtor">
+              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.deleteAtor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAtor" Modifier="Public" Name="DeleteAtor" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAtor">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.deleteAtor</CommandText>
@@ -40,7 +40,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.updateAtor" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByEditarAtor" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="EditarAtor" GeneratorSourceName="FillByEditarAtor" GetMethodModifier="Public" GetMethodName="EditarAtor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="EditarAtor" UserSourceName="FillByEditarAtor">
+              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.updateAtor" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="EditarAtor" GetMethodModifier="Public" GetMethodName="EditarAtor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="EditarAtor" UserSourceName="EditarAtor">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.updateAtor</CommandText>
@@ -99,7 +99,7 @@
               <Mapping SourceColumn="descricao" DataSetColumn="descricao" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.deleteIdioma" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="DeleteIdioma" GetMethodModifier="Public" GetMethodName="DeleteIdioma" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DeleteIdioma" UserSourceName="DeleteIdioma">
+              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.deleteIdioma" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteIdioma" Modifier="Public" Name="DeleteIdioma" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteIdioma">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.deleteIdioma</CommandText>
@@ -175,7 +175,7 @@
               <Mapping SourceColumn="classificacao_indicativa" DataSetColumn="classificacao_indicativa" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.deleteFilme" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="DeleteFilme" GetMethodModifier="Public" GetMethodName="DeleteFilme" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DeleteFilme" UserSourceName="DeleteFilme">
+              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.deleteFilme" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteFilme" Modifier="Public" Name="DeleteFilme" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteFilme">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.deleteFilme</CommandText>
@@ -243,8 +243,8 @@
                     <CommandText>dbo.selectAtuacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ator_id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@filme_id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@ator" Precision="0" ProviderType="VarChar" Scale="0" Size="255" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@filme" Precision="0" ProviderType="VarChar" Scale="0" Size="255" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -253,29 +253,26 @@
             <Mappings>
               <Mapping SourceColumn="ator_id" DataSetColumn="ator_id" />
               <Mapping SourceColumn="filme_id" DataSetColumn="filme_id" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+              <Mapping SourceColumn="sobrenome" DataSetColumn="sobrenome" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="descricao" DataSetColumn="descricao" />
+              <Mapping SourceColumn="ano_lancamento" DataSetColumn="ano_lancamento" />
+              <Mapping SourceColumn="categoria" DataSetColumn="categoria" />
+              <Mapping SourceColumn="idioma_id" DataSetColumn="idioma_id" />
+              <Mapping SourceColumn="classificacao_indicativa" DataSetColumn="classificacao_indicativa" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.inserAtuacao" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="insertAtuacao" GetMethodModifier="Public" GetMethodName="insertAtuacao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="insertAtuacao" UserSourceName="insertAtuacao">
+              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.InsertAtuacao" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="insertAtuacao" GetMethodModifier="Public" GetMethodName="insertAtuacao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="insertAtuacao" UserSourceName="insertAtuacao">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.inserAtuacao</CommandText>
+                    <CommandText>dbo.InsertAtuacao</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ator_id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@filme_id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="InputOutput" ParameterName="@ret" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="CinemaConnectionString (Web.config)" DbObjectName="Cinema.dbo.selectAtorFilme" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectAF" GetMethodModifier="Public" GetMethodName="selectAF" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="selectAF" UserSourceName="selectAF">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.selectAtorFilme</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ator_id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@filme_id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -287,89 +284,135 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DSCinema" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSCinema" msprop:Generator_UserDSName="DSCinema">
+  <xs:element name="DSCinema" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSCinema" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSCinema">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Ator" msprop:Generator_UserTableName="Ator" msprop:Generator_RowEvArgName="AtorRowChangeEvent" msprop:Generator_TableVarName="tableAtor" msprop:Generator_TablePropName="Ator" msprop:Generator_RowDeletingName="AtorRowDeleting" msprop:Generator_RowChangingName="AtorRowChanging" msprop:Generator_RowDeletedName="AtorRowDeleted" msprop:Generator_RowEvHandlerName="AtorRowChangeEventHandler" msprop:Generator_TableClassName="AtorDataTable" msprop:Generator_RowChangedName="AtorRowChanged" msprop:Generator_RowClassName="AtorRow">
+        <xs:element name="Ator" msprop:Generator_RowEvHandlerName="AtorRowChangeEventHandler" msprop:Generator_RowDeletedName="AtorRowDeleted" msprop:Generator_RowDeletingName="AtorRowDeleting" msprop:Generator_RowEvArgName="AtorRowChangeEvent" msprop:Generator_TablePropName="Ator" msprop:Generator_RowChangedName="AtorRowChanged" msprop:Generator_UserTableName="Ator" msprop:Generator_RowChangingName="AtorRowChanging" msprop:Generator_RowClassName="AtorRow" msprop:Generator_TableClassName="AtorDataTable" msprop:Generator_TableVarName="tableAtor">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_UserColumnName="nome" msprop:Generator_ColumnVarNameInTable="columnnome">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="sobrenome" msprop:Generator_ColumnVarNameInTable="columnsobrenome" msprop:Generator_ColumnPropNameInRow="sobrenome" msprop:Generator_ColumnPropNameInTable="sobrenomeColumn" msprop:Generator_UserColumnName="sobrenome">
+              <xs:element name="sobrenome" msprop:Generator_ColumnPropNameInTable="sobrenomeColumn" msprop:Generator_ColumnPropNameInRow="sobrenome" msprop:Generator_UserColumnName="sobrenome" msprop:Generator_ColumnVarNameInTable="columnsobrenome">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="link" msprop:Generator_ColumnVarNameInTable="columnlink" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_UserColumnName="link" type="xs:string" minOccurs="0" />
+              <xs:element name="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_UserColumnName="link" msprop:Generator_ColumnVarNameInTable="columnlink" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="Idioma" msprop:Generator_RowEvHandlerName="IdiomaRowChangeEventHandler" msprop:Generator_RowDeletedName="IdiomaRowDeleted" msprop:Generator_RowDeletingName="IdiomaRowDeleting" msprop:Generator_RowEvArgName="IdiomaRowChangeEvent" msprop:Generator_TablePropName="Idioma" msprop:Generator_RowChangedName="IdiomaRowChanged" msprop:Generator_UserTableName="Idioma" msprop:Generator_RowChangingName="IdiomaRowChanging" msprop:Generator_RowClassName="IdiomaRow" msprop:Generator_TableClassName="IdiomaDataTable" msprop:Generator_TableVarName="tableIdioma">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao">
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_UserColumnName="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="link" msprop:Generator_ColumnVarNameInTable="columnlink" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_UserColumnName="link" type="xs:string" minOccurs="0" />
+              <xs:element name="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_UserColumnName="link" msprop:Generator_ColumnVarNameInTable="columnlink" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Filme" msprop:Generator_RowClassName="FilmeRow" msprop:Generator_RowEvHandlerName="FilmeRowChangeEventHandler" msprop:Generator_RowDeletedName="FilmeRowDeleted" msprop:Generator_RowDeletingName="FilmeRowDeleting" msprop:Generator_RowEvArgName="FilmeRowChangeEvent" msprop:Generator_TablePropName="Filme" msprop:Generator_RowChangedName="FilmeRowChanged" msprop:Generator_UserTableName="Filme" msprop:Generator_RowChangingName="FilmeRowChanging" msprop:Generator_TableClassName="FilmeDataTable" msprop:Generator_TableVarName="tableFilme">
+        <xs:element name="Filme" msprop:Generator_RowEvHandlerName="FilmeRowChangeEventHandler" msprop:Generator_RowDeletedName="FilmeRowDeleted" msprop:Generator_RowDeletingName="FilmeRowDeleting" msprop:Generator_RowEvArgName="FilmeRowChangeEvent" msprop:Generator_TablePropName="Filme" msprop:Generator_RowChangedName="FilmeRowChanged" msprop:Generator_UserTableName="Filme" msprop:Generator_RowChangingName="FilmeRowChanging" msprop:Generator_RowClassName="FilmeRow" msprop:Generator_TableClassName="FilmeDataTable" msprop:Generator_TableVarName="tableFilme">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_UserColumnName="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao">
+              <xs:element name="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_UserColumnName="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ano_lancamento" msprop:Generator_ColumnVarNameInTable="columnano_lancamento" msprop:Generator_ColumnPropNameInRow="ano_lancamento" msprop:Generator_ColumnPropNameInTable="ano_lancamentoColumn" msprop:Generator_UserColumnName="ano_lancamento" type="xs:int" />
-              <xs:element name="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_UserColumnName="categoria">
+              <xs:element name="ano_lancamento" msprop:Generator_ColumnPropNameInTable="ano_lancamentoColumn" msprop:Generator_ColumnPropNameInRow="ano_lancamento" msprop:Generator_UserColumnName="ano_lancamento" msprop:Generator_ColumnVarNameInTable="columnano_lancamento" type="xs:int" />
+              <xs:element name="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_UserColumnName="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="idioma_id" msprop:Generator_ColumnVarNameInTable="columnidioma_id" msprop:Generator_ColumnPropNameInRow="idioma_id" msprop:Generator_ColumnPropNameInTable="idioma_idColumn" msprop:Generator_UserColumnName="idioma_id" type="xs:int" />
-              <xs:element name="classificacao_indicativa" msprop:Generator_ColumnVarNameInTable="columnclassificacao_indicativa" msprop:Generator_ColumnPropNameInRow="classificacao_indicativa" msprop:Generator_ColumnPropNameInTable="classificacao_indicativaColumn" msprop:Generator_UserColumnName="classificacao_indicativa">
+              <xs:element name="idioma_id" msprop:Generator_ColumnPropNameInTable="idioma_idColumn" msprop:Generator_ColumnPropNameInRow="idioma_id" msprop:Generator_UserColumnName="idioma_id" msprop:Generator_ColumnVarNameInTable="columnidioma_id" type="xs:int" />
+              <xs:element name="classificacao_indicativa" msprop:Generator_ColumnPropNameInTable="classificacao_indicativaColumn" msprop:Generator_ColumnPropNameInRow="classificacao_indicativa" msprop:Generator_UserColumnName="classificacao_indicativa" msprop:Generator_ColumnVarNameInTable="columnclassificacao_indicativa">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="link" msprop:Generator_ColumnVarNameInTable="columnlink" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_UserColumnName="link" type="xs:string" minOccurs="0" />
+              <xs:element name="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_UserColumnName="link" msprop:Generator_ColumnVarNameInTable="columnlink" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Atuacao" msprop:Generator_TableClassName="AtuacaoDataTable" msprop:Generator_RowEvArgName="AtuacaoRowChangeEvent" msprop:Generator_TableVarName="tableAtuacao" msprop:Generator_TablePropName="Atuacao" msprop:Generator_RowDeletingName="AtuacaoRowDeleting" msprop:Generator_RowChangingName="AtuacaoRowChanging" msprop:Generator_RowDeletedName="AtuacaoRowDeleted" msprop:Generator_RowEvHandlerName="AtuacaoRowChangeEventHandler" msprop:Generator_RowChangedName="AtuacaoRowChanged" msprop:Generator_UserTableName="Atuacao" msprop:Generator_RowClassName="AtuacaoRow">
+        <xs:element name="Atuacao" msprop:Generator_RowEvHandlerName="AtuacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="AtuacaoRowDeleted" msprop:Generator_RowDeletingName="AtuacaoRowDeleting" msprop:Generator_RowEvArgName="AtuacaoRowChangeEvent" msprop:Generator_TablePropName="Atuacao" msprop:Generator_RowChangedName="AtuacaoRowChanged" msprop:Generator_UserTableName="Atuacao" msprop:Generator_RowChangingName="AtuacaoRowChanging" msprop:Generator_RowClassName="AtuacaoRow" msprop:Generator_TableClassName="AtuacaoDataTable" msprop:Generator_TableVarName="tableAtuacao">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ator_id" msprop:Generator_ColumnVarNameInTable="columnator_id" msprop:Generator_ColumnPropNameInRow="ator_id" msprop:Generator_ColumnPropNameInTable="ator_idColumn" msprop:Generator_UserColumnName="ator_id" type="xs:int" />
-              <xs:element name="filme_id" msprop:Generator_ColumnVarNameInTable="columnfilme_id" msprop:Generator_ColumnPropNameInRow="filme_id" msprop:Generator_ColumnPropNameInTable="filme_idColumn" msprop:Generator_UserColumnName="filme_id" type="xs:int" />
+              <xs:element name="ator_id" msprop:Generator_ColumnPropNameInTable="ator_idColumn" msprop:Generator_ColumnPropNameInRow="ator_id" msprop:Generator_UserColumnName="ator_id" msprop:Generator_ColumnVarNameInTable="columnator_id" type="xs:int" />
+              <xs:element name="filme_id" msprop:Generator_ColumnPropNameInTable="filme_idColumn" msprop:Generator_ColumnPropNameInRow="filme_id" msprop:Generator_UserColumnName="filme_id" msprop:Generator_ColumnVarNameInTable="columnfilme_id" type="xs:int" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_UserColumnName="nome" msprop:Generator_ColumnVarNameInTable="columnnome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sobrenome" msprop:Generator_ColumnPropNameInTable="sobrenomeColumn" msprop:Generator_ColumnPropNameInRow="sobrenome" msprop:Generator_UserColumnName="sobrenome" msprop:Generator_ColumnVarNameInTable="columnsobrenome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_UserColumnName="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_UserColumnName="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ano_lancamento" msprop:Generator_ColumnPropNameInTable="ano_lancamentoColumn" msprop:Generator_ColumnPropNameInRow="ano_lancamento" msprop:Generator_UserColumnName="ano_lancamento" msprop:Generator_ColumnVarNameInTable="columnano_lancamento" type="xs:int" />
+              <xs:element name="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_UserColumnName="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idioma_id" msprop:Generator_ColumnPropNameInTable="idioma_idColumn" msprop:Generator_ColumnPropNameInRow="idioma_id" msprop:Generator_UserColumnName="idioma_id" msprop:Generator_ColumnVarNameInTable="columnidioma_id" type="xs:int" />
+              <xs:element name="classificacao_indicativa" msprop:Generator_ColumnPropNameInTable="classificacao_indicativaColumn" msprop:Generator_ColumnPropNameInRow="classificacao_indicativa" msprop:Generator_UserColumnName="classificacao_indicativa" msprop:Generator_ColumnVarNameInTable="columnclassificacao_indicativa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="link" msprop:Generator_UserColumnName="link" msprop:Generator_ColumnPropNameInTable="linkColumn" msprop:Generator_ColumnPropNameInRow="link" msprop:Generator_ColumnVarNameInTable="columnlink" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -391,6 +434,10 @@
       <xs:selector xpath=".//mstns:Atuacao" />
       <xs:field xpath="mstns:ator_id" />
       <xs:field xpath="mstns:filme_id" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Atuacao" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

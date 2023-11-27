@@ -14,7 +14,7 @@ namespace Cinema.Filme
         {
             id = Convert.ToInt32(Request.QueryString["id"]);
             if (!IsPostBack)
-            {
+            {    //carrega filme, a ser excluído, na tela
                 DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
                 DSCinema.FilmeDataTable dt = ta.GetFilmeById(id);
                 lblNomeFilme.Text = dt[0].titulo;
@@ -28,7 +28,7 @@ namespace Cinema.Filme
             ta.DeleteFilme(id, ref resposta);
             if (resposta == 0) //Filme com assocociação (não deixa excluir)
             {
-                Response.Write("Volta que vai dar ruim!");
+                lblMsgErro.Visible = true;
             }
             else //Filme sem associação (deixa excluir)
             {

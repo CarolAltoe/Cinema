@@ -20,12 +20,12 @@ namespace Cinema
             int? retorno = null;
             DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
             ta.InsertIdioma(descricao, ref retorno);
-            if (retorno == -1)
+            if (retorno == -1) //não permite cadastro, pois cai nas condições da procedure
             {
                 lblMsgErro.Visible = true;
                 timerHideErrorMessage.Enabled = true;
             }
-            else
+            else //permite cadastro
             {
                 Response.Redirect("Idioma.aspx");
             }
@@ -38,6 +38,11 @@ namespace Cinema
 
             // Desabilita o Timer após esconder a mensagem
             timerHideErrorMessage.Enabled = false;
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Idioma.aspx");
         }
     }
 }

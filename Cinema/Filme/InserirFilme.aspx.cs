@@ -19,6 +19,7 @@ namespace Cinema
 
         void CarregaIdioma()
         {
+            //carrega idioma
             DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
             var result = ta.GetIdioma("");
             ddlIdioma.DataSource = result;
@@ -38,13 +39,13 @@ namespace Cinema
             int? retorno = null;
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
             ta.InsertFilme(titulo, descricao, ano_lancamento, categoria, classificacao_indicativa, idioma, ref retorno);
-            if (retorno == -1)
+            if (retorno == -1) // não permite inserir pois cai nas condições da procedure
             {
                 lblMsgErro.Visible = true;
             }
-            else
+            else //permite inserir
             {
-                Response.Redirect("Filme.aspx");
+                Response.Redirect("Filme.aspx"); 
             }
 
         }

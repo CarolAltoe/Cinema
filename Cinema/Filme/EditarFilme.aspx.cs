@@ -20,6 +20,7 @@ namespace Cinema.Filme
             id = Convert.ToInt32(Request.QueryString["id"]);
             if (!IsPostBack)
             {
+                //carrega o filme, a ser editado, na tela
                 DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
                 DSCinema.FilmeDataTable dt = ta.GetFilmeById(id);
                 txtTitulo.Text = dt[0].titulo;
@@ -46,15 +47,16 @@ namespace Cinema.Filme
             {
                 Response.Redirect("Filme.aspx");
             }
-            else //não permite edição
+            else //não permite edição, pois cai nas condições da procedure
             {
                 lblMsgErro.Visible = true;
             }
         }
 
 
-            void CarregaIdioma()
+        void CarregaIdioma()
         {
+            //carrega idioma
             DSCinemaTableAdapters.IdiomaTableAdapter ta = new DSCinemaTableAdapters.IdiomaTableAdapter();
             var result = ta.GetIdioma("");
             ddlIdioma.DataSource = result;

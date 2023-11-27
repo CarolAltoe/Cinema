@@ -40,13 +40,13 @@ CREATE TABLE AtorFilme (
 
 -- Drops pra caso precise :)
 -- Drop da tabela de relacionamento entre Ator e Filmes (AtorFilme)
-DROP TABLE IF EXISTS AtorFilme;
+-- DROP TABLE IF EXISTS AtorFilme;
 -- Drop da tabela Filmes
-DROP TABLE IF EXISTS Filmes;
+-- DROP TABLE IF EXISTS Filmes;
 -- Drop da tabela Idiomas
-DROP TABLE IF EXISTS Idiomas;
+-- DROP TABLE IF EXISTS Idiomas;
 -- Drop da tabela Ator
-DROP TABLE IF EXISTS Ator;
+-- DROP TABLE IF EXISTS Ator;
 -- Drop do banco de dados Cinema
-USE master; -- Voltar ao banco de dados master antes de remover o banco de dados Cinema
-DROP DATABASE IF EXISTS Cinema;
+-- USE master; -- Voltar ao banco de dados master antes de remover o banco de dados Cinema
+-- DROP DATABASE IF EXISTS Cinema;

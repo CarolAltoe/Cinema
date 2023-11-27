@@ -29,7 +29,7 @@
             <br />
             <br />
 
-            <h4>Lista de atores</h4>
+            <h4>Lista de atores:</h4>
             <asp:GridView ID="gvAtor" runat="server" AutoGenerateColumns="False" class="table table-striped table-bordered">
                 <Columns>
                     <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />

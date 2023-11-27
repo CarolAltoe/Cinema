@@ -11,11 +11,16 @@ namespace Cinema.View
     {
         void CarregaAtor(string nome, string sobrenome)
         {
+            //carrega dados de ator
             DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
             DSCinema.AtorDataTable dt = ta.GetAtor(nome, sobrenome);
 
-            for (int i = 0; i <dt.Count; i++)
+            for (int i = 0; i <dt.Count; i++)//constrói os links para cada ator cadastrado
             {
+               /*
+                 decisão de projeto de não colocar link para detalhes do ator pela quantidade de atributos
+                 que o mesmo possui: como são poucos, não viu-se necessidade
+               */
                 string editar = "<a href = 'EditarAtor?id=" + dt[i].id + "'>Editar</a>";
                 string deletar = "<a href = 'DeletarAtor?id=" + dt[i].id + "'>Deletar</a>";
                 string link = editar + " | " + deletar;

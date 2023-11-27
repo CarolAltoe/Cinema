@@ -19,5 +19,6 @@
             <asp:Label ID="lblMsgErro" runat="server" Text="Erro! O idioma inserido já existe." Visible="False"></asp:Label>
         </div>
         <asp:Button ID="btnCadastrarIdioma" class="btn btn-success" runat="server" Text="Cadastrar Idioma" OnClick="btnCadastrarIdioma_Click" />
-    </main>
+        <asp:Button ID="btnVoltar" class="btn btn-secondary" runat="server" Text="Voltar" OnClick="btnVoltar_Click" CausesValidation="False" />
+     </main>
 </asp:Content>

@@ -33,7 +33,7 @@
             <br />
             <br />
 
-            <h4>Lista de Filmees</h4>
+            <h4>Lista de Filmes:</h4>
             <asp:GridView ID="gvFilme" runat="server" AutoGenerateColumns="False" class="table table-striped table-bordered">
                 <Columns>
                     <asp:BoundField DataField="Titulo" HeaderText="Titulo" SortExpression="Titulo" />

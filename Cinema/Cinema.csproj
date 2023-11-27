@@ -238,7 +238,6 @@
   <ItemGroup>
     <Content Include="Ator\DeletarAtor.aspx" />
     <Content Include="Ator\EditarAtor.aspx" />
-    <Content Include="Atuacao\Atuacao.aspx" />
     <Content Include="Atuacao\InserirAtuacao.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -359,13 +358,6 @@
     </Compile>
     <Compile Include="Ator\EditarAtor.aspx.designer.cs">
       <DependentUpon>EditarAtor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Atuacao\Atuacao.aspx.cs">
-      <DependentUpon>Atuacao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Atuacao\Atuacao.aspx.designer.cs">
-      <DependentUpon>Atuacao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Atuacao\InserirAtuacao.aspx.cs">
       <DependentUpon>InserirAtuacao.aspx</DependentUpon>

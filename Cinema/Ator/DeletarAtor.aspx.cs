@@ -15,9 +15,10 @@ namespace Cinema.Ator
             id = Convert.ToInt32(Request.QueryString["id"]);
             if (!IsPostBack)
             {
+                //carrega o nome+sobrenome do ator, a ser excluído, na tela
                 DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
                 DSCinema.AtorDataTable dt = ta.GetAtorById(id);
-                lblNomeAtor.Text = dt[0].nome + " " + dt[0].sobrenome;
+                lblNomeAtor.Text = dt[0].nome + " " + dt[0].sobrenome; 
             }
         }
 
@@ -28,7 +29,7 @@ namespace Cinema.Ator
             ta.DeleteAtor(id, ref resposta);
             if (resposta == 0) //ator com assocociação (não deixa excluir)
             {
-                Response.Write("Volta que vai dar ruim!");
+                lblMsgErro.Visible = true;
             }
             else //ator sem associação (deixa excluir)
             {
@@ -39,7 +40,7 @@ namespace Cinema.Ator
 
         protected void btnNão_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ator.aspx");
+            Response.Redirect("Ator.aspx"); 
         }
     }
 }

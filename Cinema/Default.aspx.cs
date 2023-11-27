@@ -13,15 +13,9 @@ namespace Cinema
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                //CarregaAtor();
-                //CarregaFilme();
-                //CarregaAtuacao();
-            }
+          
         }
 
-      
 
         protected void btnCriarAtuacao_Click(object sender, EventArgs e)
         {
@@ -30,92 +24,39 @@ namespace Cinema
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
-            /*
-           // string ator = txtAtorAtuacao.Text;
-            //string titulo = txtFilmeAtuacao.Text;
-            int ator = Convert.ToInt32(txtAtorAtuacao.Text);
-           // string titulo = txtFilmeAtuacao.Text;
-            // string descricao = txtDescricaoFilme.Text;
-            //string categoria = txtCategoriaFilme.Text;
+             string ator = txtAtorAtuacao.Text;
+             string titulo = txtFilmeAtuacao.Text;
+             CarregaAtuacao(ator, titulo);
+        }
 
-            // CarregaAtuacao(CarregaFilme(), CarregaAtor()) ;
-            // CarregaFilme(titulo, descricao, categoria, classificacao_indicativa, idioma);
-
-            // DSCinemaTableAdapters.AtuacaoTableAdapter ta = new DSCinemaTableAdapters.AtuacaoTableAdapter();
-            // var result = ta.SelectAF("","", "", "");
-
-
+        private void CarregaAtuacao(string ator, string titulo)
+        {
+            //carrega dados das atuações
             DSCinemaTableAdapters.AtuacaoTableAdapter ta = new DSCinemaTableAdapters.AtuacaoTableAdapter();
-            DSCinema.AtuacaoDataTable dt = ta.selectAF(ator, titulo);
+            DSCinema.AtuacaoDataTable dt = ta.SelectAtuacao(ator, titulo);
 
-            for (int i = 0; i < dt.Count; i++)
+            for (int i = 0; i < dt.Count; i++)//contrói link para visualizar detalhes dos filmes associados
             {
-                string editar = "<a href = 'EditarFilme?id=" + dt[i].id + "'>Editar</a>";
-                string deletar = "<a href = 'DeletarFilme?id=" + dt[i].id + "'>Deletar</a>";
-                string link = editar + " | " + deletar;
-               // dt[i].link = link;
+
+                string nomeCompleto = dt.Rows[i]["nome"] + " " + dt.Rows[i]["sobrenome"];
+                /*
+                  decisão de projeto de colocar link para detalhes do filme com intuito de não deixar a grid de
+                  atuação poluída ou incompleta. Não viu-se necessidade de uma página separada 
+                  para exibir detalhes da atuação uma vez que todos os dados de atores são exibidos na grid de atuação
+                  e seria repetitivo ter outro arquivo similar para trazer os dados de filme (uma vez que a página
+                  DetalhesFilme já faz isso). Caso houvessem mais atributos em ator, seria, sim, boa prática ter
+                  uma página separada para exibir detalhes da atuação.
+                */
+                string detalhes = "<a href = 'Filme/DetalhesFilme?id=" + dt[i].filme_id + "'>Detalhes do filme</a>";
+                string link = detalhes; 
+
+                dt.Rows[i]["nome"] = nomeCompleto;
+                dt[i].link = link;
 
             }
 
             gvAtuacao.DataSource = dt;
             gvAtuacao.DataBind();
-
-            */
         }
     }
 }
-
-/*
- 
- 
- string ator = txtAtorAtuacao.Text; // nome e sobrenome 
-            string filme = txtFilmeAtuacao.Text; // filme e categoria
-            int? retorno = null;
-            DSCinemaTableAdapters.AtuacaoTableAdapter ta = new DSCinemaTableAdapters.AtuacaoTableAdapter();
-            DSCinema.AtuacaoDataTable dt = ta.SelectAtuacao(ator, filme, ref retorno);
-
-            gvAtuacao.DataSource = dt;
-            gvAtuacao.DataBind();
-*/
-
-/*
- 
-
-  void CarregaAtor(string nome, string sobrenome)
-        {
-            DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
-            DSCinema.AtorDataTable dt = ta.GetAtor(nome, sobrenome);
-
-            for (int i = 0; i < dt.Count; i++)
-            {
-                string editar = "<a href = 'EditarAtor?id=" + dt[i].id + "'>Editar</a>";
-                string deletar = "<a href = 'DeletarAtor?id=" + dt[i].id + "'>Deletar</a>";
-                string link = editar + " | " + deletar;
-                dt[i].link = link;
-
-            }
-
-           // gvAtor.DataSource = dt;
-           // gvAtor.DataBind();
-        }
-
-        void CarregaFilme(string titulo, string descricao, string categoria, string classificacao_indicativa, int idioma_id)
-        {
-            DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
-            DSCinema.FilmeDataTable dt = ta.GetFilme(titulo, descricao, categoria, classificacao_indicativa, idioma_id);
-
-            for (int i = 0; i < dt.Count; i++)
-            {
-                string editar = "<a href = 'EditarFilme?id=" + dt[i].id + "'>Editar</a>";
-                string deletar = "<a href = 'DeletarFilme?id=" + dt[i].id + "'>Deletar</a>";
-                string link = editar + " | " + deletar;
-                dt[i].link = link;
-
-            }
-
-           // gvFilme.DataSource = dt;
-           // gvFilme.DataBind();
-        }
- 
- 
- */

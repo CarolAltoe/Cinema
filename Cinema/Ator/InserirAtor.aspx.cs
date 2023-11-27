@@ -21,11 +21,11 @@ namespace Cinema
             int? retorno = null;
             DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
             ta.InsertAtor(nome, sobrenome, ref retorno);
-            if (retorno == -1)
+            if (retorno == -1) //não permite cadastro, pois ator já existe
             {
                 lblMsgErro.Visible = true;
             }
-            else
+            else // permite cadastro
             {
                 Response.Redirect("Ator.aspx");
             }

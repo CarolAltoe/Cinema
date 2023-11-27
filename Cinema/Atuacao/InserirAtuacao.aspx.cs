@@ -9,6 +9,13 @@ namespace Cinema.Atuacao
 {
     public partial class InserirAtuacao : System.Web.UI.Page
     {
+        /*
+            decisão de projeto de criar uma pasta para armazenar os arquivos referentes a atuação
+            para que os mesmos não ficassem na raíz do projeto, causando desorganização e dificuldade 
+            de orientação. Obx: O arquivo para listar as atuações é o Default.aspx, visto que é o arquivo 
+            inicial do projeto, permaneceu na raiz, fora da pasta de atuações
+        */
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,6 +27,7 @@ namespace Cinema.Atuacao
 
         void CarregaAtor()
         {
+            //carrega dados de ator
             DSCinemaTableAdapters.AtorTableAdapter ta = new DSCinemaTableAdapters.AtorTableAdapter();
             var result = ta.GetAtor("", "");
             result.Columns.Add("NomeCompleto", typeof(string), "nome + ' ' + sobrenome");
@@ -31,8 +39,9 @@ namespace Cinema.Atuacao
 
         void CarregaFilme()
         {
+            //carrega dados de filme
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
-            var result = ta.GetFilme("", "","", "", 0);
+            var result = ta.GetFilme("", "","");
             ddlFilme.DataSource = result;
             ddlFilme.DataTextField = "titulo";
             ddlFilme.DataValueField = "id";
@@ -46,16 +55,19 @@ namespace Cinema.Atuacao
             int? retorno = null;
             DSCinemaTableAdapters.AtuacaoTableAdapter ta = new DSCinemaTableAdapters.AtuacaoTableAdapter();
             ta.insertAtuacao(ator, filme, ref retorno);
-            if (retorno == -1)
+            if (retorno == -1) //não permite cadastrar pois cai nas condições da procedure
             {
                 lblMsgErro.Visible = true;
             }
-            else
+            else //permite cadaastrar
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("~/Default.aspx");
             }
         }
-        
-       
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }

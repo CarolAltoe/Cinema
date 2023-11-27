@@ -12,14 +12,15 @@ namespace Cinema.View
 
         void CarregaFilme(string titulo, string categoria, string classificacao_indicativa )
         {
+            //carrega dados de filme
             DSCinemaTableAdapters.FilmeTableAdapter ta = new DSCinemaTableAdapters.FilmeTableAdapter();
             DSCinema.FilmeDataTable dt = ta.GetFilme(titulo, categoria, classificacao_indicativa);
 
-            for (int i = 0; i < dt.Count; i++)
+            for (int i = 0; i < dt.Count; i++) //constrói os links para cada ator cadastrado
             {
                 string editar = "<a href = 'EditarFilme?id=" + dt[i].id + "'>Editar</a>";
                 string deletar = "<a href = 'DeletarFilme?id=" + dt[i].id + "'>Deletar</a>";
-                string detalhes = "<a href = 'DetalhesFilme?id=" + dt[i].id + "'>Detalhes</a>";
+                string detalhes = "<a href = 'DetalhesFilme?id=" + dt[i].id + "'>Detalhes</a>"; //link para ver demais informações do filme
                 string link = editar + " | " + deletar + " | " + detalhes;
                 dt[i].link = link;
 
@@ -33,11 +34,8 @@ namespace Cinema.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                CarregaFilme("", "", "");
-            }
-           }    
+            CarregaFilme("", "", "");
+        }    
 
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
